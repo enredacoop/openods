@@ -104,7 +104,7 @@ function paintIndicators( location_id ){
 
 function paintIndicatorsODS( location_id, ods_selected){
 	showElement( $("#section-indicators") );
-	$("#section-indicators #img-sdg").attr("src", "images/sdgs/sdg_" + ods_selected + ".png");
+	$("#section-indicators #img-sdg").attr("src", "images/sdgs/es/sdg_" + ods_selected + ".png");
 	$("#section-indicators #score-sdg").text( round( map_data[location_id].ods["sdg"+ods_selected].score ) );
 	$("#section-indicators #list-indicators").html("");
 	colorODSindicator();
@@ -112,7 +112,7 @@ function paintIndicatorsODS( location_id, ods_selected){
 	$.each( map_data[location_id].ods["sdg"+ods_selected].indicators, function(key, value){
 		code = '<li class="list-group-item d-flex justify-content-between align-items-center">'
 					    + getNameIndicator(value.id) +
-							'<span class="badge badge-primary badge-pill">' + round(value.score) + '</span>' +
+							'<span class="badge badge-pill ' + getColor(value.color, "class-css") + '">' + round(value.score) + '</span>' +
 					  '</li>';
 		$("#section-indicators #list-indicators").append( code );
 	});
@@ -121,7 +121,28 @@ function round( value ){
 	return Math.round(value * 100) / 100
 }
 
-
+/* Función para obtener el color correspondiente según el valor y el tipo */
+function getColor( value, type ){
+	res = "";
+	if( type=="class-css"){
+		switch( value ){
+			case "green": res = "bg-green"; break;
+			case "yellow": res = "bg-yellow"; break;
+			case "orange": res = "bg-orange"; break;
+			case "red": res = "bg-red"; break;
+			default: res = "bg-none";
+		}
+	}else if( type=="var-js"){
+		switch( value ){
+			case "green": res = bg_green; break;
+			case "yellow": res = bg_yellow; break;
+			case "orange": res = bg_orange; break;
+			case "red": res = bg_red; break;
+			default: res = bg_none;
+		}
+	}
+	return res;
+}
 // Función para colorear todos los ODS según la ciudad seleccionada
 function colorODS( location_id ) {
 		//debugger;
@@ -189,6 +210,7 @@ function obtieneData() {
 	getDataJSON( ).done(function ( data_JSON ) { 
 		$.map( data_JSON, function(file) {
 			arrayData = new Object();
+			//debugger
 			arrayData[ "name" ] = file.name.replace(/_/g, " ") ; // hacemos replace para quitar los guiones bajos "_"
 			arrayData[ "location_id" ] = file.location_id ;
 			arrayData[ "score" ] = file.score ;
@@ -363,7 +385,8 @@ function updateChart(element, chart) {
 
     $.map(Array.from(sorted_places.values()), function(obj) {
       scores.push(obj[0]);
-      colors.push(obj[1]);
+      //debugger;
+      colors.push( getColor(obj[1], "var-js"));
     });
 
     chart.data.labels = Array.from(sorted_places.keys());

@@ -10,6 +10,8 @@
 	Table Of Content
 		
 		00 Basics
+			00.01 Margins
+			00.02 Paddings
 		01 Navbar
 		02 Footer
 		03 Section Map
@@ -30,8 +32,8 @@
 	--gray: 		#7B7B7B;
 
 	--default-trans:  rgba(123,123,123,.66);
-	--light-trans:  				rgba(236,236,236,0.33);
-	--gray-trans: 	 				rgba(48,48,48,0.13);
+	--light-trans:  	rgba(236,236,236,0.33);
+	--gray-trans: 	 	rgba(48,48,48,0.13);
 
 	--sdg_01: #E92140;
 	--sdg_02: #E0A33A;
@@ -101,9 +103,19 @@ button {
 	opacity: 0;
 }
 
+/* ----------------------------------------------------------------
+	[ 00.01 Margins ]
+-----------------------------------------------------------------*/
 .m-10 {
 	margin: 10px;
 }
+.mb-60 {
+	margin-bottom: 60px;
+}
+
+/* ----------------------------------------------------------------
+	[ 00.02 Paddings ]
+-----------------------------------------------------------------*/
 .ptb-30 {
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -121,11 +133,11 @@ footer {
 	margin-top: auto;
   background: var(--light);
   padding: 30px 0px;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--gray);
 }
 footer .footer-logos {
-	text-align: right;
+	/*text-align: right;*/
 }
 footer .footer-logos img {
 	width: 100px;
@@ -231,9 +243,13 @@ footer .footer-logos img {
     margin-right: 5px;
     width: 25px;
   }
-
   .legend-global div span {
     vertical-align: middle;
+	}
+	.legend-global a {
+		font-size: 10px;
+		text-decoration: none;
+		margin: 0px 5px;
 	}
 
 /* ----------------------------------------------------------------
@@ -316,6 +332,11 @@ footer .footer-logos img {
 	#section-indicators h6, 
 	#section-indicators h3 {
 		color: #FFFFFF;
+	}
+	#section-indicators .badge {
+		padding: 5px;
+		color: var(--light);
+		cursor: default;
 	}
 
 

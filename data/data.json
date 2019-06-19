@@ -643,7 +643,7 @@
     "lat": "40.4819791",
     "location_id": "28005",
     "lon": "-3.3635421",
-    "name": "Alcala_de_Henares",
+    "name": "Alcalá de Henares",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -1921,7 +1921,7 @@
     "lat": "40.3468454",
     "location_id": "28007",
     "lon": "-3.8278443",
-    "name": "Alcorcon",
+    "name": "Alcorcón",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -3838,7 +3838,7 @@
     "lat": "36.834047",
     "location_id": "04013",
     "lon": "-2.4637136",
-    "name": "Almeria",
+    "name": "Almería",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -5116,7 +5116,7 @@
     "lat": "40.656685",
     "location_id": "05019",
     "lon": "-4.6812086",
-    "name": "Avila",
+    "name": "Ávila",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -5755,7 +5755,7 @@
     "lat": "43.5579523",
     "location_id": "33004",
     "lon": "-5.9246653",
-    "name": "Aviles",
+    "name": "Avilés",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -10228,7 +10228,7 @@
     "lat": "39.47618",
     "location_id": "10037",
     "lon": "-6.37076",
-    "name": "Caceres",
+    "name": "Cáceres",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -10867,7 +10867,7 @@
     "lat": "36.52969",
     "location_id": "11012",
     "lon": "-6.292657",
-    "name": "Cadiz",
+    "name": "Cádiz",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -12145,7 +12145,7 @@
     "lat": "39.9863563",
     "location_id": "12040",
     "lon": "-0.0513246",
-    "name": "Castellon_de_la_Plana",
+    "name": "Castellón de la Plana/Castelló de la Plana",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -13423,7 +13423,7 @@
     "lat": "36.41915",
     "location_id": "11015",
     "lon": "-6.149412",
-    "name": "Chiclana_de_la_Frontera",
+    "name": "Chiclana de la Frontera",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -14062,7 +14062,7 @@
     "lat": "38.9848295",
     "location_id": "13034",
     "lon": "-3.9273778",
-    "name": "Ciudad_Real",
+    "name": "Ciudad Real",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -14701,7 +14701,7 @@
     "lat": "37.88473",
     "location_id": "14021",
     "lon": "-4.779152",
-    "name": "Cordoba",
+    "name": "Córdoba",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -15340,7 +15340,7 @@
     "lat": "41.3573827",
     "location_id": "08073",
     "lon": "2.0707159",
-    "name": "Cornella_de_Llobregat",
+    "name": "Cornellá de Llobregat",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -17257,7 +17257,7 @@
     "lat": "43.318334",
     "location_id": "20069",
     "lon": "-1.9812313",
-    "name": "Donostia",
+    "name": "Donostia/San Sebastián",
     "ods": {
       "sdg01": {
         "color": "gray",
@@ -17896,7 +17896,7 @@
     "lat": "37.28318",
     "location_id": "41038",
     "lon": "-5.922242",
-    "name": "Dos_Hermanas",
+    "name": "Dos Hermanas",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -18535,7 +18535,7 @@
     "lat": "36.7731148",
     "location_id": "04902",
     "lon": "-2.8103551",
-    "name": "El_Ejido",
+    "name": "El Ejido",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -19174,7 +19174,7 @@
     "lat": "36.5318405",
     "location_id": "11027",
     "lon": "-6.2970079",
-    "name": "El_Puerto_de Santa_María",
+    "name": "El Puerto de Santa María",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -21730,7 +21730,7 @@
     "lat": "43.5322015",
     "location_id": "33024",
     "lon": "-5.6611195",
-    "name": "Gijon",
+    "name": "Gijón",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -24286,7 +24286,7 @@
     "lat": "41.3661865",
     "location_id": "08101",
     "lon": "2.1164942",
-    "name": "Hospitalet_de_Llobregat",
+    "name": "Hospitalet de Llobregat",
     "ods": {
       "sdg01": {
         "color": "green",
@@ -26842,7 +26842,7 @@
     "lat": "36.68656",
     "location_id": "11020",
     "lon": "-6.137173",
-    "name": "Jerez_de_la_Frontera",
+    "name": "Jerez de la Frontera",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -27481,7 +27481,7 @@
     "lat": "43.3623436",
     "location_id": "15030",
     "lon": "-8.4115401",
-    "name": "La_Coruña",
+    "name": "La Coruña",
     "ods": {
       "sdg01": {
         "color": "red",
@@ -28120,7 +28120,7 @@
     "lat": "28.1235459",
     "location_id": "35016",
     "lon": "-15.4362574",
-    "name": "Las_Palmas_de_Gran_Canaria",
+    "name": "Las Palmas de Gran Canaria",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -28759,7 +28759,7 @@
     "lat": "40.3092383",
     "location_id": "28127",
     "lon": "-4.4922092",
-    "name": "Las_Rozas_de_Madrid",
+    "name": "Las Rozas de Madrid",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -29398,7 +29398,7 @@
     "lat": "40.3319506",
     "location_id": "28074",
     "lon": "-3.7686545",
-    "name": "Leganes",
+    "name": "Leganés",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -30037,7 +30037,7 @@
     "lat": "42.60232",
     "location_id": "24089",
     "lon": "-5.57504",
-    "name": "Leon",
+    "name": "León",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -31315,7 +31315,7 @@
     "lat": "42.4627195",
     "location_id": "26089",
     "lon": "-2.4449852",
-    "name": "Logrono",
+    "name": "Logroño",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -33871,7 +33871,7 @@
     "lat": "36.71965",
     "location_id": "29067",
     "lon": "-4.420019",
-    "name": "Malaga",
+    "name": "Málaga",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -35149,7 +35149,7 @@
     "lat": "41.5381124",
     "location_id": "08121",
     "lon": "2.4447406",
-    "name": "Mataro",
+    "name": "Mataró",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -36427,7 +36427,7 @@
     "lat": "40.3232129",
     "location_id": "28092",
     "lon": "-3.8676291",
-    "name": "Mostoles",
+    "name": "Móstoles",
     "ods": {
       "sdg01": {
         "color": "green",
@@ -40261,7 +40261,7 @@
     "lat": "42.812526",
     "location_id": "31201",
     "lon": "-1.6457745",
-    "name": "Pamplona",
+    "name": "Pamplona/Iruña",
     "ods": {
       "sdg01": {
         "color": "gray",
@@ -42178,7 +42178,7 @@
     "lat": "40.4440049",
     "location_id": "28115",
     "lon": "-3.8056526",
-    "name": "Pozuelo_de_Alarcon",
+    "name": "Pozuelo de Alarcón",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -44095,7 +44095,7 @@
     "lat": "36.7636819",
     "location_id": "04079",
     "lon": "-2.6154266",
-    "name": "Roquetas_de_Mar",
+    "name": "Roquetas de Mar",
     "ods": {
       "sdg01": {
         "color": "red",
@@ -46012,7 +46012,7 @@
     "lat": "41.3458415",
     "location_id": "08200",
     "lon": "2.035041",
-    "name": "San_Baudilio_de_Llobregat",
+    "name": "San Baudilio de Llobregat",
     "ods": {
       "sdg01": {
         "color": "green",
@@ -46651,7 +46651,7 @@
     "lat": "28.4874009",
     "location_id": "38023",
     "lon": "-16.3159061",
-    "name": "San_Cristobal_de_La_Laguna",
+    "name": "San Cristóbal de La Laguna",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -47290,7 +47290,7 @@
     "lat": "41.4720702",
     "location_id": "08205",
     "lon": "2.0865154",
-    "name": "San_Cugat_del_Valles",
+    "name": "San Cugat del Vallés",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -47929,7 +47929,7 @@
     "lat": "36.46572",
     "location_id": "11031",
     "lon": "-6.196626",
-    "name": "San_Fernando",
+    "name": "San Fernando",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -48568,7 +48568,7 @@
     "lat": "40.5589672",
     "location_id": "28134",
     "lon": "-3.6261976",
-    "name": "San_Sebastian_de_los_Reyes",
+    "name": "San Sebastián de los Reyes",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -49207,7 +49207,7 @@
     "lat": "41.4445879",
     "location_id": "08245",
     "lon": "2.2103217",
-    "name": "Santa_Coloma_de_Gramanet",
+    "name": "Santa Coloma de Gramanet",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -49846,7 +49846,7 @@
     "lat": "28.4636296",
     "location_id": "38038",
     "lon": "-16.2518467",
-    "name": "Santa_Cruz_de_Tenerife",
+    "name": "Santa Cruz de Tenerife",
     "ods": {
       "sdg01": {
         "color": "yellow",
@@ -51124,7 +51124,7 @@
     "lat": "42.8782132",
     "location_id": "15078",
     "lon": "-8.5448445",
-    "name": "Santiago_de_Compostela",
+    "name": "Santiago de Compostela",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -53680,7 +53680,7 @@
     "lat": "39.962884",
     "location_id": "45165",
     "lon": "-4.8304536",
-    "name": "Talavera_de_la_Reina",
+    "name": "Talavera de la Reina",
     "ods": {
       "sdg01": {
         "color": "orange",
@@ -57514,7 +57514,7 @@
     "lat": "40.4567552",
     "location_id": "28148",
     "lon": "-3.4754967",
-    "name": "Torrejon_de_Ardoz",
+    "name": "Torrejón de Ardoz",
     "ods": {
       "sdg01": {
         "color": "yellow",
