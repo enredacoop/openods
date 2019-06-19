@@ -1,0 +1,1805 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -1.8585424,
+          38.994349
+        ],
+        "type": "Point"
+      },
+      "id": 0,
+      "properties": {
+        "id": 0,
+        "lat": "38.994349",
+        "location_id": "02003",
+        "lon": "-1.8585424",
+        "name": "Albacete"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.3635421,
+          40.4819791
+        ],
+        "type": "Point"
+      },
+      "id": 1,
+      "properties": {
+        "id": 1,
+        "lat": "40.4819791",
+        "location_id": "28005",
+        "lon": "-3.3635421",
+        "name": "Alcala_de_Henares"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.6372245,
+          40.5372512
+        ],
+        "type": "Point"
+      },
+      "id": 2,
+      "properties": {
+        "id": 2,
+        "lat": "40.5372512",
+        "location_id": "28006",
+        "lon": "-3.6372245",
+        "name": "Alcobendas"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.8278443,
+          40.3468454
+        ],
+        "type": "Point"
+      },
+      "id": 3,
+      "properties": {
+        "id": 3,
+        "lat": "40.3468454",
+        "location_id": "28007",
+        "lon": "-3.8278443",
+        "name": "Alcorcon"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.447698,
+          36.12978
+        ],
+        "type": "Point"
+      },
+      "id": 4,
+      "properties": {
+        "id": 4,
+        "lat": "36.12978",
+        "location_id": "11004",
+        "lon": "-5.447698",
+        "name": "Algeciras"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4906855,
+          38.3459963
+        ],
+        "type": "Point"
+      },
+      "id": 5,
+      "properties": {
+        "id": 5,
+        "lat": "38.3459963",
+        "location_id": "03014",
+        "lon": "-0.4906855",
+        "name": "Alicante"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.4637136,
+          36.834047
+        ],
+        "type": "Point"
+      },
+      "id": 6,
+      "properties": {
+        "id": 6,
+        "lat": "36.834047",
+        "location_id": "04013",
+        "lon": "-2.4637136",
+        "name": "Almeria"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -16.680556,
+          28.099722
+        ],
+        "type": "Point"
+      },
+      "id": 7,
+      "properties": {
+        "id": 7,
+        "lat": "28.099722",
+        "location_id": "38006",
+        "lon": "-16.680556",
+        "name": "Arona"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.6812086,
+          40.656685
+        ],
+        "type": "Point"
+      },
+      "id": 8,
+      "properties": {
+        "id": 8,
+        "lat": "40.656685",
+        "location_id": "05019",
+        "lon": "-4.6812086",
+        "name": "Avila"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.9246653,
+          43.5579523
+        ],
+        "type": "Point"
+      },
+      "id": 9,
+      "properties": {
+        "id": 9,
+        "lat": "43.5579523",
+        "location_id": "33004",
+        "lon": "-5.9246653",
+        "name": "Aviles"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.970284,
+          38.8786
+        ],
+        "type": "Point"
+      },
+      "id": 10,
+      "properties": {
+        "id": 10,
+        "lat": "38.8786",
+        "location_id": "06015",
+        "lon": "-6.970284",
+        "name": "Badajoz"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.2450325,
+          41.4469883
+        ],
+        "type": "Point"
+      },
+      "id": 11,
+      "properties": {
+        "id": 11,
+        "lat": "41.4469883",
+        "location_id": "08015",
+        "lon": "2.2450325",
+        "name": "Badalona"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.9862029,
+          43.2969875
+        ],
+        "type": "Point"
+      },
+      "id": 12,
+      "properties": {
+        "id": 12,
+        "lat": "43.2969875",
+        "location_id": "48013",
+        "lon": "-2.9862029",
+        "name": "Baracaldo"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.1734035,
+          41.3850639
+        ],
+        "type": "Point"
+      },
+      "id": 13,
+      "properties": {
+        "id": 13,
+        "lat": "41.3850639",
+        "location_id": "08019",
+        "lon": "2.1734035",
+        "name": "Barcelona"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.9349852,
+          43.2630126
+        ],
+        "type": "Point"
+      },
+      "id": 14,
+      "properties": {
+        "id": 14,
+        "lat": "43.2630126",
+        "location_id": "48020",
+        "lon": "-2.9349852",
+        "name": "Bilbao"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.6229563,
+          42.3544529
+        ],
+        "type": "Point"
+      },
+      "id": 15,
+      "properties": {
+        "id": 15,
+        "lat": "42.3544529",
+        "location_id": "09059",
+        "lon": "-3.6229563",
+        "name": "Burgos"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.37076,
+          39.47618
+        ],
+        "type": "Point"
+      },
+      "id": 16,
+      "properties": {
+        "id": 16,
+        "lat": "39.47618",
+        "location_id": "10037",
+        "lon": "-6.37076",
+        "name": "Caceres"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.292657,
+          36.52969
+        ],
+        "type": "Point"
+      },
+      "id": 17,
+      "properties": {
+        "id": 17,
+        "lat": "36.52969",
+        "location_id": "11012",
+        "lon": "-6.292657",
+        "name": "Cadiz"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.9965839,
+          37.6256827
+        ],
+        "type": "Point"
+      },
+      "id": 18,
+      "properties": {
+        "id": 18,
+        "lat": "37.6256827",
+        "location_id": "30016",
+        "lon": "-0.9965839",
+        "name": "Cartagena"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.0513246,
+          39.9863563
+        ],
+        "type": "Point"
+      },
+      "id": 19,
+      "properties": {
+        "id": 19,
+        "lat": "39.9863563",
+        "location_id": "12040",
+        "lon": "-0.0513246",
+        "name": "Castellon_de_la_Plana"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.3213455,
+          35.8893874
+        ],
+        "type": "Point"
+      },
+      "id": 20,
+      "properties": {
+        "id": 20,
+        "lat": "35.8893874",
+        "location_id": "51001",
+        "lon": "-5.3213455",
+        "name": "Ceuta"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.149412,
+          36.41915
+        ],
+        "type": "Point"
+      },
+      "id": 21,
+      "properties": {
+        "id": 21,
+        "lat": "36.41915",
+        "location_id": "11015",
+        "lon": "-6.149412",
+        "name": "Chiclana_de_la_Frontera"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.9273778,
+          38.9848295
+        ],
+        "type": "Point"
+      },
+      "id": 22,
+      "properties": {
+        "id": 22,
+        "lat": "38.9848295",
+        "location_id": "13034",
+        "lon": "-3.9273778",
+        "name": "Ciudad_Real"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.779152,
+          37.88473
+        ],
+        "type": "Point"
+      },
+      "id": 23,
+      "properties": {
+        "id": 23,
+        "lat": "37.88473",
+        "location_id": "14021",
+        "lon": "-4.779152",
+        "name": "Cordoba"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.0707159,
+          41.3573827
+        ],
+        "type": "Point"
+      },
+      "id": 24,
+      "properties": {
+        "id": 24,
+        "lat": "41.3573827",
+        "location_id": "08073",
+        "lon": "2.0707159",
+        "name": "Cornella_de_Llobregat"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.5651646,
+          40.4260459
+        ],
+        "type": "Point"
+      },
+      "id": 25,
+      "properties": {
+        "id": 25,
+        "lat": "40.4260459",
+        "location_id": "28049",
+        "lon": "-3.5651646",
+        "name": "Coslada"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.1374162,
+          40.0703925
+        ],
+        "type": "Point"
+      },
+      "id": 26,
+      "properties": {
+        "id": 26,
+        "lat": "40.0703925",
+        "location_id": "16078",
+        "lon": "-2.1374162",
+        "name": "Cuenca"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.9812313,
+          43.318334
+        ],
+        "type": "Point"
+      },
+      "id": 27,
+      "properties": {
+        "id": 27,
+        "lat": "43.318334",
+        "location_id": "20069",
+        "lon": "-1.9812313",
+        "name": "Donostia"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.922242,
+          37.28318
+        ],
+        "type": "Point"
+      },
+      "id": 28,
+      "properties": {
+        "id": 28,
+        "lat": "37.28318",
+        "location_id": "41038",
+        "lon": "-5.922242",
+        "name": "Dos_Hermanas"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.8103551,
+          36.7731148
+        ],
+        "type": "Point"
+      },
+      "id": 29,
+      "properties": {
+        "id": 29,
+        "lat": "36.7731148",
+        "location_id": "04902",
+        "lon": "-2.8103551",
+        "name": "El_Ejido"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.2970079,
+          36.5318405
+        ],
+        "type": "Point"
+      },
+      "id": 30,
+      "properties": {
+        "id": 30,
+        "lat": "36.5318405",
+        "location_id": "11027",
+        "lon": "-6.2970079",
+        "name": "El_Puerto_de Santa_María"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.7125608,
+          38.2699329
+        ],
+        "type": "Point"
+      },
+      "id": 31,
+      "properties": {
+        "id": 31,
+        "lat": "38.2699329",
+        "location_id": "03065",
+        "lon": "-0.7125608",
+        "name": "Elche"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.8035477,
+          40.2902056
+        ],
+        "type": "Point"
+      },
+      "id": 32,
+      "properties": {
+        "id": 32,
+        "lat": "40.2902056",
+        "location_id": "28058",
+        "lon": "-3.8035477",
+        "name": "Fuenlabrada"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.7323934,
+          40.3082504
+        ],
+        "type": "Point"
+      },
+      "id": 33,
+      "properties": {
+        "id": 33,
+        "lat": "40.3082504",
+        "location_id": "28065",
+        "lon": "-3.7323934",
+        "name": "Getafe"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.6611195,
+          43.5322015
+        ],
+        "type": "Point"
+      },
+      "id": 34,
+      "properties": {
+        "id": 34,
+        "lat": "43.5322015",
+        "location_id": "33024",
+        "lon": "-5.6611195",
+        "name": "Gijon"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.8214264,
+          41.9794005
+        ],
+        "type": "Point"
+      },
+      "id": 35,
+      "properties": {
+        "id": 35,
+        "lat": "41.9794005",
+        "location_id": "17079",
+        "lon": "2.8214264",
+        "name": "Girona"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.597929,
+          37.17649
+        ],
+        "type": "Point"
+      },
+      "id": 36,
+      "properties": {
+        "id": 36,
+        "lat": "37.17649",
+        "location_id": "18087",
+        "lon": "-3.597929",
+        "name": "Granada"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.16017,
+          40.632489
+        ],
+        "type": "Point"
+      },
+      "id": 37,
+      "properties": {
+        "id": 37,
+        "lat": "40.632489",
+        "location_id": "19130",
+        "lon": "-3.16017",
+        "name": "Guadalajara"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.1164942,
+          41.3661865
+        ],
+        "type": "Point"
+      },
+      "id": 38,
+      "properties": {
+        "id": 38,
+        "lat": "41.3661865",
+        "location_id": "08101",
+        "lon": "2.1164942",
+        "name": "Hospitalet_de_Llobregat"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.949555,
+          37.2571
+        ],
+        "type": "Point"
+      },
+      "id": 39,
+      "properties": {
+        "id": 39,
+        "lat": "37.2571",
+        "location_id": "21041",
+        "lon": "-6.949555",
+        "name": "Huelva"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.408898,
+          42.1401
+        ],
+        "type": "Point"
+      },
+      "id": 40,
+      "properties": {
+        "id": 40,
+        "lat": "42.1401",
+        "location_id": "22125",
+        "lon": "-0.408898",
+        "name": "Huesca"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.789518,
+          37.76574
+        ],
+        "type": "Point"
+      },
+      "id": 41,
+      "properties": {
+        "id": 41,
+        "lat": "37.76574",
+        "location_id": "23050",
+        "lon": "-3.789518",
+        "name": "Jaén"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.137173,
+          36.68656
+        ],
+        "type": "Point"
+      },
+      "id": 42,
+      "properties": {
+        "id": 42,
+        "lat": "36.68656",
+        "location_id": "11020",
+        "lon": "-6.137173",
+        "name": "Jerez_de_la_Frontera"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -8.4115401,
+          43.3623436
+        ],
+        "type": "Point"
+      },
+      "id": 43,
+      "properties": {
+        "id": 43,
+        "lat": "43.3623436",
+        "location_id": "15030",
+        "lon": "-8.4115401",
+        "name": "La_Coruña"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -15.4362574,
+          28.1235459
+        ],
+        "type": "Point"
+      },
+      "id": 44,
+      "properties": {
+        "id": 44,
+        "lat": "28.1235459",
+        "location_id": "35016",
+        "lon": "-15.4362574",
+        "name": "Las_Palmas_de_Gran_Canaria"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.4922092,
+          40.3092383
+        ],
+        "type": "Point"
+      },
+      "id": 45,
+      "properties": {
+        "id": 45,
+        "lat": "40.3092383",
+        "location_id": "28127",
+        "lon": "-4.4922092",
+        "name": "Las_Rozas_de_Madrid"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.7686545,
+          40.3319506
+        ],
+        "type": "Point"
+      },
+      "id": 46,
+      "properties": {
+        "id": 46,
+        "lat": "40.3319506",
+        "location_id": "28074",
+        "lon": "-3.7686545",
+        "name": "Leganes"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.57504,
+          42.60232
+        ],
+        "type": "Point"
+      },
+      "id": 47,
+      "properties": {
+        "id": 47,
+        "lat": "42.60232",
+        "location_id": "24089",
+        "lon": "-5.57504",
+        "name": "Leon"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0.632669,
+          41.620696
+        ],
+        "type": "Point"
+      },
+      "id": 48,
+      "properties": {
+        "id": 48,
+        "lat": "41.620696",
+        "location_id": "25120",
+        "lon": "0.632669",
+        "name": "Lleida"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.4449852,
+          42.4627195
+        ],
+        "type": "Point"
+      },
+      "id": 49,
+      "properties": {
+        "id": 49,
+        "lat": "42.4627195",
+        "location_id": "26089",
+        "lon": "-2.4449852",
+        "name": "Logrono"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.6968357,
+          37.6735925
+        ],
+        "type": "Point"
+      },
+      "id": 50,
+      "properties": {
+        "id": 50,
+        "lat": "37.6735925",
+        "location_id": "30024",
+        "lon": "-1.6968357",
+        "name": "Lorca"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -7.555851,
+          43.01208
+        ],
+        "type": "Point"
+      },
+      "id": 51,
+      "properties": {
+        "id": 51,
+        "lat": "43.01208",
+        "location_id": "27028",
+        "lon": "-7.555851",
+        "name": "Lugo"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.7037902,
+          40.4167754
+        ],
+        "type": "Point"
+      },
+      "id": 52,
+      "properties": {
+        "id": 52,
+        "lat": "40.4167754",
+        "location_id": "28079",
+        "lon": "-3.7037902",
+        "name": "Madrid"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.420019,
+          36.71965
+        ],
+        "type": "Point"
+      },
+      "id": 53,
+      "properties": {
+        "id": 53,
+        "lat": "36.71965",
+        "location_id": "29067",
+        "lon": "-4.420019",
+        "name": "Malaga"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.886352,
+          36.50994
+        ],
+        "type": "Point"
+      },
+      "id": 54,
+      "properties": {
+        "id": 54,
+        "lat": "36.50994",
+        "location_id": "29069",
+        "lon": "-4.886352",
+        "name": "Marbella"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.4447406,
+          41.5381124
+        ],
+        "type": "Point"
+      },
+      "id": 55,
+      "properties": {
+        "id": 55,
+        "lat": "41.5381124",
+        "location_id": "08121",
+        "lon": "2.4447406",
+        "name": "Mataro"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.5804989,
+          40.2924071
+        ],
+        "type": "Point"
+      },
+      "id": 56,
+      "properties": {
+        "id": 56,
+        "lat": "40.2924071",
+        "location_id": "52001",
+        "lon": "-4.5804989",
+        "name": "Melilla"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.8676291,
+          40.3232129
+        ],
+        "type": "Point"
+      },
+      "id": 57,
+      "properties": {
+        "id": 57,
+        "lat": "40.3232129",
+        "location_id": "28092",
+        "lon": "-3.8676291",
+        "name": "Mostoles"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.131522,
+          37.97479
+        ],
+        "type": "Point"
+      },
+      "id": 58,
+      "properties": {
+        "id": 58,
+        "lat": "37.97479",
+        "location_id": "30030",
+        "lon": "-1.131522",
+        "name": "Murcia"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -7.864641,
+          42.34001
+        ],
+        "type": "Point"
+      },
+      "id": 59,
+      "properties": {
+        "id": 59,
+        "lat": "42.34001",
+        "location_id": "32054",
+        "lon": "-7.864641",
+        "name": "Orense"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.8493887,
+          43.3619145
+        ],
+        "type": "Point"
+      },
+      "id": 60,
+      "properties": {
+        "id": 60,
+        "lat": "43.3619145",
+        "location_id": "33044",
+        "lon": "-5.8493887",
+        "name": "Oviedo"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.534135,
+          42.015711
+        ],
+        "type": "Point"
+      },
+      "id": 61,
+      "properties": {
+        "id": 61,
+        "lat": "42.015711",
+        "location_id": "34120",
+        "lon": "-4.534135",
+        "name": "Palencia"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.6501603,
+          39.5696005
+        ],
+        "type": "Point"
+      },
+      "id": 62,
+      "properties": {
+        "id": 62,
+        "lat": "39.5696005",
+        "location_id": "07040",
+        "lon": "2.6501603",
+        "name": "Palma"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.6457745,
+          42.812526
+        ],
+        "type": "Point"
+      },
+      "id": 63,
+      "properties": {
+        "id": 63,
+        "lat": "42.812526",
+        "location_id": "31201",
+        "lon": "-1.6457745",
+        "name": "Pamplona"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.768906,
+          40.232367
+        ],
+        "type": "Point"
+      },
+      "id": 64,
+      "properties": {
+        "id": 64,
+        "lat": "40.232367",
+        "location_id": "28106",
+        "lon": "-3.768906",
+        "name": "Parla"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -8.648053,
+          42.43362
+        ],
+        "type": "Point"
+      },
+      "id": 65,
+      "properties": {
+        "id": 65,
+        "lat": "42.43362",
+        "location_id": "36038",
+        "lon": "-8.648053",
+        "name": "Pontevedra"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.8056526,
+          40.4440049
+        ],
+        "type": "Point"
+      },
+      "id": 66,
+      "properties": {
+        "id": 66,
+        "lat": "40.4440049",
+        "location_id": "28115",
+        "lon": "-3.8056526",
+        "name": "Pozuelo_de_Alarcon"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          1.1055321,
+          41.1498259
+        ],
+        "type": "Point"
+      },
+      "id": 67,
+      "properties": {
+        "id": 67,
+        "lat": "41.1498259",
+        "location_id": "43123",
+        "lon": "1.1055321",
+        "name": "Reus"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.5357334,
+          40.3519065
+        ],
+        "type": "Point"
+      },
+      "id": 68,
+      "properties": {
+        "id": 68,
+        "lat": "40.3519065",
+        "location_id": "28123",
+        "lon": "-3.5357334",
+        "name": "Rivas-Vaciamadrid"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.6154266,
+          36.7636819
+        ],
+        "type": "Point"
+      },
+      "id": 69,
+      "properties": {
+        "id": 69,
+        "lat": "36.7636819",
+        "location_id": "04079",
+        "lon": "-2.6154266",
+        "name": "Roquetas_de_Mar"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.1086131,
+          41.5462745
+        ],
+        "type": "Point"
+      },
+      "id": 70,
+      "properties": {
+        "id": 70,
+        "lat": "41.5462745",
+        "location_id": "08187",
+        "lon": "2.1086131",
+        "name": "Sabadell"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.64899,
+          40.972235
+        ],
+        "type": "Point"
+      },
+      "id": 71,
+      "properties": {
+        "id": 71,
+        "lat": "40.972235",
+        "location_id": "37274",
+        "lon": "-5.64899",
+        "name": "Salamanca"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.035041,
+          41.3458415
+        ],
+        "type": "Point"
+      },
+      "id": 72,
+      "properties": {
+        "id": 72,
+        "lat": "41.3458415",
+        "location_id": "08200",
+        "lon": "2.035041",
+        "name": "San_Baudilio_de_Llobregat"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -16.3159061,
+          28.4874009
+        ],
+        "type": "Point"
+      },
+      "id": 73,
+      "properties": {
+        "id": 73,
+        "lat": "28.4874009",
+        "location_id": "38023",
+        "lon": "-16.3159061",
+        "name": "San_Cristobal_de_La_Laguna"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.0865154,
+          41.4720702
+        ],
+        "type": "Point"
+      },
+      "id": 74,
+      "properties": {
+        "id": 74,
+        "lat": "41.4720702",
+        "location_id": "08205",
+        "lon": "2.0865154",
+        "name": "San_Cugat_del_Valles"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.196626,
+          36.46572
+        ],
+        "type": "Point"
+      },
+      "id": 75,
+      "properties": {
+        "id": 75,
+        "lat": "36.46572",
+        "location_id": "11031",
+        "lon": "-6.196626",
+        "name": "San_Fernando"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.6261976,
+          40.5589672
+        ],
+        "type": "Point"
+      },
+      "id": 76,
+      "properties": {
+        "id": 76,
+        "lat": "40.5589672",
+        "location_id": "28134",
+        "lon": "-3.6261976",
+        "name": "San_Sebastian_de_los_Reyes"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.2103217,
+          41.4445879
+        ],
+        "type": "Point"
+      },
+      "id": 77,
+      "properties": {
+        "id": 77,
+        "lat": "41.4445879",
+        "location_id": "08245",
+        "lon": "2.2103217",
+        "name": "Santa_Coloma_de_Gramanet"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -16.2518467,
+          28.4636296
+        ],
+        "type": "Point"
+      },
+      "id": 78,
+      "properties": {
+        "id": 78,
+        "lat": "28.4636296",
+        "location_id": "38038",
+        "lon": "-16.2518467",
+        "name": "Santa_Cruz_de_Tenerife"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.807934,
+          43.46096
+        ],
+        "type": "Point"
+      },
+      "id": 79,
+      "properties": {
+        "id": 79,
+        "lat": "43.46096",
+        "location_id": "39075",
+        "lon": "-3.807934",
+        "name": "Santander"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -8.5448445,
+          42.8782132
+        ],
+        "type": "Point"
+      },
+      "id": 80,
+      "properties": {
+        "id": 80,
+        "lat": "42.8782132",
+        "location_id": "15078",
+        "lon": "-8.5448445",
+        "name": "Santiago_de_Compostela"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.11365,
+          40.93403
+        ],
+        "type": "Point"
+      },
+      "id": 81,
+      "properties": {
+        "id": 81,
+        "lat": "40.93403",
+        "location_id": "40194",
+        "lon": "-4.11365",
+        "name": "Segovia"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.996295,
+          37.38264
+        ],
+        "type": "Point"
+      },
+      "id": 82,
+      "properties": {
+        "id": 82,
+        "lat": "37.38264",
+        "location_id": "41091",
+        "lon": "-5.996295",
+        "name": "Sevilla"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.476537,
+          41.754754
+        ],
+        "type": "Point"
+      },
+      "id": 83,
+      "properties": {
+        "id": 83,
+        "lat": "41.754754",
+        "location_id": "42173",
+        "lon": "-2.476537",
+        "name": "Soria"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.8304536,
+          39.962884
+        ],
+        "type": "Point"
+      },
+      "id": 84,
+      "properties": {
+        "id": 84,
+        "lat": "39.962884",
+        "location_id": "45165",
+        "lon": "-4.8304536",
+        "name": "Talavera_de_la_Reina"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          1.253214,
+          41.111624
+        ],
+        "type": "Point"
+      },
+      "id": 85,
+      "properties": {
+        "id": 85,
+        "lat": "41.111624",
+        "location_id": "43148",
+        "lon": "1.253214",
+        "name": "Tarragona"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.0088747,
+          41.563211
+        ],
+        "type": "Point"
+      },
+      "id": 86,
+      "properties": {
+        "id": 86,
+        "lat": "41.563211",
+        "location_id": "08279",
+        "lon": "2.0088747",
+        "name": "Tarrasa"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -15.4173726,
+          27.9955313
+        ],
+        "type": "Point"
+      },
+      "id": 87,
+      "properties": {
+        "id": 87,
+        "lat": "27.9955313",
+        "location_id": "35026",
+        "lon": "-15.4173726",
+        "name": "Telde"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.10691,
+          40.34411
+        ],
+        "type": "Point"
+      },
+      "id": 88,
+      "properties": {
+        "id": 88,
+        "lat": "40.34411",
+        "location_id": "44216",
+        "lon": "-1.10691",
+        "name": "Teruel"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.011244,
+          39.862272
+        ],
+        "type": "Point"
+      },
+      "id": 89,
+      "properties": {
+        "id": 89,
+        "lat": "39.862272",
+        "location_id": "45168",
+        "lon": "-4.011244",
+        "name": "Toledo"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.4754967,
+          40.4567552
+        ],
+        "type": "Point"
+      },
+      "id": 90,
+      "properties": {
+        "id": 90,
+        "lat": "40.4567552",
+        "location_id": "28148",
+        "lon": "-3.4754967",
+        "name": "Torrejon_de_Ardoz"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.472373,
+          39.4322368
+        ],
+        "type": "Point"
+      },
+      "id": 91,
+      "properties": {
+        "id": 91,
+        "lat": "39.4322368",
+        "location_id": "46244",
+        "lon": "-0.472373",
+        "name": "Torrent"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6808233,
+          37.9847003
+        ],
+        "type": "Point"
+      },
+      "id": 92,
+      "properties": {
+        "id": 92,
+        "lat": "37.9847003",
+        "location_id": "03133",
+        "lon": "-0.6808233",
+        "name": "Torrevieja"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.3762881,
+          39.4699075
+        ],
+        "type": "Point"
+      },
+      "id": 93,
+      "properties": {
+        "id": 93,
+        "lat": "39.4699075",
+        "location_id": "46250",
+        "lon": "-0.3762881",
+        "name": "Valencia"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.726986,
+          41.642167
+        ],
+        "type": "Point"
+      },
+      "id": 94,
+      "properties": {
+        "id": 94,
+        "lat": "41.642167",
+        "location_id": "47186",
+        "lon": "-4.726986",
+        "name": "Valladolid"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -8.712447,
+          42.23136
+        ],
+        "type": "Point"
+      },
+      "id": 95,
+      "properties": {
+        "id": 95,
+        "lat": "42.23136",
+        "location_id": "36057",
+        "lon": "-8.712447",
+        "name": "Vigo"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.6817918,
+          42.8591656
+        ],
+        "type": "Point"
+      },
+      "id": 96,
+      "properties": {
+        "id": 96,
+        "lat": "42.8591656",
+        "location_id": "01059",
+        "lon": "-2.6817918",
+        "name": "Vitoria-Gasteiz"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.100675,
+          36.77864
+        ],
+        "type": "Point"
+      },
+      "id": 97,
+      "properties": {
+        "id": 97,
+        "lat": "36.77864",
+        "location_id": "29094",
+        "lon": "-4.100675",
+        "name": "Vélez-Málaga"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.7467879,
+          41.5034712
+        ],
+        "type": "Point"
+      },
+      "id": 98,
+      "properties": {
+        "id": 98,
+        "lat": "41.5034712",
+        "location_id": "49275",
+        "lon": "-5.7467879",
+        "name": "Zamora"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.8765379,
+          41.65629
+        ],
+        "type": "Point"
+      },
+      "id": 99,
+      "properties": {
+        "id": 99,
+        "lat": "41.65629",
+        "location_id": "50297",
+        "lon": "-0.8765379",
+        "name": "Zaragoza"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

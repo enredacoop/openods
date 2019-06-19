@@ -1,0 +1,506 @@
+/*-----------------------------------------------------------------------------------
+
+	Author: ENREDA
+	Author URI: https://enreda.coop
+	Version: 0.2.1
+
+-----------------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+
+	Table Of Content
+		
+		00 Basics
+		01 Navbar
+		02 Footer
+		03 Section Map
+		04 Section Data
+		05 Section Indicators
+		06 SDGs
+		07 Buttons
+		08 Badges
+		09 Charts
+ 
+---------------------------------------------------------------- */
+/* ----------------------------------------------------------------
+	[ 00 Basics ]
+-----------------------------------------------------------------*/
+:root {
+	--default: 	#5A5A5A;
+	--light: 		#ECECEC;
+	--gray: 		#7B7B7B;
+
+	--default-trans:  rgba(123,123,123,.66);
+	--light-trans:  				rgba(236,236,236,0.33);
+	--gray-trans: 	 				rgba(48,48,48,0.13);
+
+	--sdg_01: #E92140;
+	--sdg_02: #E0A33A;
+	--sdg_03: #4CA149;
+	--sdg_04: #C72032;
+	--sdg_05: #EF3E2E;
+	--sdg_06: #27C1EC;
+	--sdg_07: #FAC312;
+	--sdg_08: #A61C45;
+	--sdg_09: #F26A30;
+	--sdg_10: #DF1767;
+	--sdg_11: #F59D29;
+	--sdg_12: #BC8B2A;
+	--sdg_13: #437E47;
+	--sdg_14: #2296D7;
+	--sdg_15: #5DB84A;
+	--sdg_16: #16699D;
+	--sdg_17: #15476D;
+	--sdg_18: #FFFFFF;
+
+	--bg-red: 		#DD3545;
+	--bg-orange: 	#E9713A;
+	--bg-yellow: 	#F2BC3C;
+	--bg-green: 	#1D8635;
+	--bg-none: 		#595959;
+
+	--bg-score-80:	#36869A;
+	--bg-score-70:	#4FACC5;
+	--bg-score-60:	#94CDDB;
+	--bg-score-50:	#B7DDE8;
+	--bg-score-40:	#DBEEF6;
+	--bg-score-30:	#E6F2F7;
+
+	--shadow-primary: 0px -3px 6px rgba(0,0,0,.13);
+	--shadow-panel: 0px 1px 6px rgba(0,0,0,.13);
+}
+
+html, body {
+  height: 100% !important;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+body {
+  display: -ms-flexbox!important;
+	display: flex!important;
+	color: var(--default);
+	background: var(--light);
+	font-size: 14px;
+}
+main {
+	margin-bottom: 60px;
+}
+h1 {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 0px;
+  background: #ececec;
+}
+button {
+	border: 0px;
+}
+	button:focus {
+		outline: none;
+	}
+
+.hidden {
+	display: none;
+	opacity: 0;
+}
+
+.m-10 {
+	margin: 10px;
+}
+.ptb-30 {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+/* ----------------------------------------------------------------
+	[ 01 Navbar ]
+-----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+	[ 02 Footer ]
+-----------------------------------------------------------------*/
+footer {
+	margin-top: auto;
+  background: var(--light);
+  padding: 30px 0px;
+  font-size: 14px;
+  color: var(--gray);
+}
+footer .footer-logos {
+	text-align: right;
+}
+footer .footer-logos img {
+	width: 100px;
+  filter: grayscale(100%);
+}
+	footer .footer-logos a {
+		text-decoration: none;
+	}
+	footer .footer-logos img:hover {
+	  filter: grayscale(0%);
+	}
+
+/* ----------------------------------------------------------------
+	[ 03 Section Map ]
+-----------------------------------------------------------------*/
+.section-map > .row {
+	margin: 0px;
+}
+	.section-map > .row .col-12 {
+		padding: 0px;
+	}
+
+.map {
+  display: block;
+  height: 600px;
+  width: 100%;
+}
+.map-overlay {
+	font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	box-shadow: var(--shadow-panel);
+	border-radius: 3px;
+	position: absolute;
+	width: 25%;
+	top: 20px;
+	left: 20px;
+	padding: 10px;
+	display: none;
+}
+
+.popup-map > .mapboxgl-popup-tip {
+
+}
+.popup-map > .mapboxgl-popup-content {
+	border-radius: 60px;
+  box-shadow: var(--shadow-panel);
+  padding: 15px 20px;
+  padding-bottom: 7px;
+}
+.popup-map h2 {
+	font-size: 16px;
+	text-align: center;
+}
+.popup-map h3 {
+	font-size: 13px;
+	color: var(--gray);
+}
+
+.loader {
+    height: auto;
+    width: 20%;
+    position: absolute;
+    text-align: center;
+    padding: 30px 15px;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: 0 auto 1em;
+    z-index: 9999;
+    background: rgba(0,0,0,.75);
+}
+	.loader > span {
+		color: #FFF;
+		font-size: 13px;
+		display: block;
+	}
+ 	svg path,
+  svg rect {
+    fill: #FFFFFF;
+  }
+
+.legend-global.over-map {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 3;
+  box-shadow: var(--shadow-panel);
+}
+.legend-global {
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 10px;
+  border: 1px solid var(--light);
+}
+	.legend-global h4 {
+		margin: 0 0 10px;
+		font-size: 17px;
+	}
+	.legend-global div span:first-child {
+		display: inline-block;
+    height: 12px;
+    margin-right: 5px;
+    width: 25px;
+  }
+
+  .legend-global div span {
+    vertical-align: middle;
+	}
+
+/* ----------------------------------------------------------------
+	[ 04 Section Data ]
+-----------------------------------------------------------------*/
+.section-data {
+	position: relative;
+	top: -75px;
+	z-index: 9;
+}
+	.section-data > .container {
+		background: #FFFFFF;
+	}
+.section-data .wrapper-block-title {
+	display: contents;
+}
+.section-data .block-title {
+	position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  box-shadow: var(--shadow-primary);
+  border-bottom: 1px solid var(--light);
+  background: #FFFFFF;
+  z-index: 9;
+}
+.section-data .block-title .row {
+	margin-right: 0px;
+  margin-left: 0px;
+}
+.section-data .wrapper-title > h2 {
+  padding: 30px;
+}
+	.section-data .wrapper-title > h2 > #title {
+    font-size: 22px;
+    vertical-align: middle;
+    color: var(--gray);
+	}
+.section-data #data {
+	margin: 0 auto;
+	max-width: 700px;
+}
+
+/* ----------------------------------------------------------------
+	[ 05 Section Indicators ]
+-----------------------------------------------------------------*/
+#section-indicators {
+  border-radius: 6px;
+  border: 1px solid var(--light);
+  margin: 10px;
+}
+	#section-indicators div:first-child {
+		padding-left: 0px;
+    padding-right: 0px;
+	}
+	#section-indicators .list-group {
+		margin: 30px 0px;
+	}
+	#section-indicators .sdg {
+		opacity: 1;
+		padding: 30px;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+	}
+		/*#section-indicators .sdg .wrapper {
+			position: absolute;
+	    top: 0px;
+	    left: 0px;
+	    width: 100%;
+	    padding: 15px;
+		}*/
+		#section-indicators .sdg img {
+			width: 100%;
+    	max-width: 150px;
+		}
+
+	#section-indicators h6, 
+	#section-indicators h3 {
+		color: #FFFFFF;
+	}
+
+
+
+
+/* ----------------------------------------------------------------
+	[ 06 SDGs ]
+-----------------------------------------------------------------*/
+.block-sdgs {
+	margin-top: 10px;
+}
+.block-sdgs ul {
+	list-style: none;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding-inline-start: 0px;
+  text-align: center;
+}
+	.block-sdgs ul > li {
+    display: inline-block;
+    width: 14.333%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+	}
+	.block-sdgs .sdg img {
+		width: 100%;
+	}
+	.block-sdgs a {
+		-webkit-appearance: initial;
+	}
+	.block-sdgs a.sdg img {
+		width: 95%;
+	}
+
+.sdg_01 {
+	background-color: var(--sdg_01);
+}
+.sdg_02 {
+	background-color: var(--sdg_02);
+}
+.sdg_03 {
+	background-color: var(--sdg_03);
+}
+.sdg_04 {
+	background-color: var(--sdg_04);
+}
+.sdg_05 {
+	background-color: var(--sdg_05);
+}
+.sdg_06 {
+	background-color: var(--sdg_06);
+}
+.sdg_07 {
+	background-color: var(--sdg_07);
+}
+.sdg_08 {
+	background-color: var(--sdg_08);
+}
+.sdg_09 {
+	background-color: var(--sdg_09);
+}
+.sdg_10 {
+	background-color: var(--sdg_10);
+}
+.sdg_11 {
+	background-color: var(--sdg_11);
+}
+.sdg_12 {
+	background-color: var(--sdg_12);
+}
+.sdg_13 {
+	background-color: var(--sdg_13);
+}
+.sdg_14 {
+	background-color: var(--sdg_14);
+}
+.sdg_15 {
+	background-color: var(--sdg_15);
+}
+.sdg_16 {
+	background-color: var(--sdg_16);
+}
+.sdg_17 {
+	background-color: var(--sdg_17);
+}
+.sdg_18 {
+	background-color: var(--sdg_18);
+}
+
+
+/* Fondos según nivel ODS */
+.sdg.bg-orange, .bg-orange {
+	background-color: var(--bg-orange);
+}
+.sdg.bg-yellow, .bg-yellow {
+	background-color: var(--bg-yellow);
+}
+.sdg.bg-red, .bg-red {
+	background-color: var(--bg-red);
+}
+.sdg.bg-green, .bg-green {
+	background-color: var(--bg-green);
+}
+.sdg.bg-none, .bg-none, .bg-score-none {
+	background-color: var(--bg-none);
+}
+
+
+/* Fondos según score */
+.bg-score-80 {
+	background-color: var(--bg-score-80);
+}
+.bg-score-70 {
+	background-color: var(--bg-score-70);
+}
+.bg-score-60 {
+	background-color: var(--bg-score-60);
+}
+.bg-score-50 {
+	background-color: var(--bg-score-50);
+}
+.bg-score-40 {
+	background-color: var(--bg-score-40);
+}
+.bg-score-30 {
+	background-color: var(--bg-score-30);
+}
+
+
+/* Fondos */
+.bg-gray-trans {
+	background-color: var(--gray-trans)
+}
+.bg-light-trans {
+	background-color: var(--light-trans)
+}
+.bg-default {
+	background-color: var(--default)
+}
+
+
+/* ----------------------------------------------------------------
+	[ 07 Buttons ]
+-----------------------------------------------------------------*/
+button.sdg, a.sdg {
+	opacity: 0.50;
+}
+	button.sdg:hover, a.sdg:hover, button.sdg.sdg_hover {
+		opacity: 1;
+	}
+.button-top {
+	position: fixed;
+  bottom: 30px;
+  right: 30px;
+  color: var(--default);
+  background: #FFFFFF;
+  box-shadow: var(--shadow-primary);
+  padding: 5px 10px;
+  border-radius: 100%;
+  z-index: 999;
+}
+
+/* ----------------------------------------------------------------
+	[ 08 Badges ]
+-----------------------------------------------------------------*/
+.badge-reset {
+  margin-top: 45px;
+}
+.badge-primary {
+	background: var(--light);
+	color: var(--gray);
+}
+	.badge-primary:hover, .badge-primary:focus {
+		background: var(--gray) !important;
+		color: var(--light) !important;
+		box-shadow: none !important;
+	}
+
+
+/* ----------------------------------------------------------------
+	[ 09 Charts ]
+-----------------------------------------------------------------*/
+#my-chart {
+	width: 100%;
+	height: auto;
+	max-height: 350px;
+}
+

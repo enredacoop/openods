@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Mapbox Map</title>
+
+
+    <!-- CSS Externs -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+    <!-- Custom Styles -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Mapbox Library -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- JS Externs -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+		<!-- Chart.js Library-->
+		<script src="js/Chart.js"></script>
+
+    <!-- Custom Javascripts -->
+    <script src="js/main.js"></script>
+  </head>
+  <body class="d-flex flex-column h-100" ondragstart="return false">
+    <header>
+    	<nav class="navbar navbar-expand-lg navbar-light">
+			  <a class="navbar-brand" href="#" target="_blank">OpenODS Data</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item active">
+			        <a class="nav-link" href="mapa.html">Mapa <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Cómo funciona</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Contacto</a>
+			      </li>
+			    </ul>
+			  </div>
+			</nav>
+	  </header>
+
+		<main role="main" class="flex-shrink-0">
+	    <section class="section-map">
+	    	<div class="row">
+	    		<div class="col-12">
+			    	<div id="search"></div>
+			       <div id="mapbox-map" class="map"></div>
+
+			       <div class="loader loader--style1" title="0" id="loader">
+			        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+			            <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+			    s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+			    c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+				            <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+				    C22.32,8.481,24.301,9.057,26.013,10.047z">
+				                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite" /></animateTransform>
+				            </path>
+				          </path>
+			        </svg>
+
+			        <span>Cargando datos...</span>
+			    	</div>
+
+			    	<div class="legend-global over-map">
+							<h4>Puntuación global</h4>
+							<div><span class="bg-score-80"></span><span>> 80</span></div>
+							<div><span class="bg-score-70"></span><span>70 - 80</span></div>
+							<div><span class="bg-score-60"></span><span>60 - 70</span></div>
+							<div><span class="bg-score-50"></span><span>50 - 60</span></div>
+							<div><span class="bg-score-40"></span><span>40 - 50</span></div>
+							<div><span class="bg-score-30"></span><span>< 50</span></div>
+							<div><span class="bg-score-none"></span><span>Información no disponible</span></div>
+						</div>
+
+
+					</div>
+				</div>
+	    </section>
+	    <section class="section-data">
+				<div class="container">
+
+					<!-- Título -->
+					<div class="row wrapper-block-title">
+						<div class="col-12 block-title">
+							<div class="row">
+								<div class="col-8">
+									<div class="wrapper-title"><h2><span id="title-city"></span><span id="title">Objetivos y metas de desarrollo sostenible</span></h2></div>
+								</div>
+								<div class="col-4 text-right">
+									<a id="reset-data-ods" href="#" class="badge badge-primary badge-reset hidden">Ver puntuación general</a>
+									<!--a id="reset-data-map" href="#" class="badge badge-primary badge-reset">Volver al listado</a-->
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Gráficas -->
+					<div class="row justify-content-center ptb-30">
+						<div class="col-6">
+							<canvas id="my-chart"></canvas>
+						</div>
+						<div class="col-6">
+							<canvas id="my-chart-comparative"></canvas>
+						</div>
+					</div>
+
+					<div class="row justify-content-around">
+						<div class="col-4 m-10">
+							<div class="legend-global">
+								<h4>Puntuación</h4>
+								<div><span class="bg-green"></span><span>Objetivo conseguido</span></div>
+								<div><span class="bg-yellow"></span><span>Los desafíos permanecen</span></div>
+								<div><span class="bg-orange"></span><span>Quedan importantes desafíos</span></div>
+								<div><span class="bg-red"></span><span>Los principales desafíos permanecen</span></div>
+								<div><span class="bg-none"></span><span>Información no disponible</span></div>
+							</div>
+						</div>
+						<div class="col-4 m-10">
+							<div class="legend-global">
+								<h4>Comparativa</h4>
+								<div><span class="bg-gray-trans"></span><span>Puntuación media global</span></div>
+								<div><span class="bg-default"></span><span>Puntuación ciudad seleccionada</span></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- SDGS -->
+					<div class="row">
+						<div class="col-12 block-sdgs">
+							<ul>
+								<li><button class="sdg sdg_01" data-sdg="01"><img src="images/sdgs/sdg_01.png" /></button></li>
+								<li><button class="sdg sdg_02" data-sdg="02"><img src="images/sdgs/sdg_02.png" /></button></li>
+								<li><button class="sdg sdg_03" data-sdg="03"><img src="images/sdgs/sdg_03.png" /></button></li>
+								<li><button class="sdg sdg_04" data-sdg="04"><img src="images/sdgs/sdg_04.png" /></button></li>
+								<li><button class="sdg sdg_05" data-sdg="05"><img src="images/sdgs/sdg_05.png" /></button></li>
+								<li><button class="sdg sdg_06" data-sdg="06"><img src="images/sdgs/sdg_06.png" /></button></li>
+								<li><button class="sdg sdg_07" data-sdg="07"><img src="images/sdgs/sdg_07.png" /></button></li>
+								<li><button class="sdg sdg_08" data-sdg="08"><img src="images/sdgs/sdg_08.png" /></button></li>
+								<li><button class="sdg sdg_09" data-sdg="09"><img src="images/sdgs/sdg_09.png" /></button></li>
+								<li><button class="sdg sdg_10" data-sdg="10"><img src="images/sdgs/sdg_10.png" /></button></li>
+								<li><button class="sdg sdg_11" data-sdg="11"><img src="images/sdgs/sdg_11.png" /></button></li>
+								<li><button class="sdg sdg_12" data-sdg="12"><img src="images/sdgs/sdg_12.png" /></button></li>
+								<li><button class="sdg sdg_13" data-sdg="13"><img src="images/sdgs/sdg_13.png" /></button></li>
+								<li><button class="sdg sdg_14" data-sdg="14"><img src="images/sdgs/sdg_14.png" /></button></li>
+								<li><button class="sdg sdg_15" data-sdg="15"><img src="images/sdgs/sdg_15.png" /></button></li>
+								<li><button class="sdg sdg_16" data-sdg="16"><img src="images/sdgs/sdg_16.png" /></button></li>
+								<li><button class="sdg sdg_17" data-sdg="17"><img src="images/sdgs/sdg_17.png" /></button></li>
+								<li><button class="sdg sdg_18" data-sdg="18"><img src="images/sdgs/sdg_18.png" /></button></li>
+							</ul>
+						</div>
+						<div class="col-12">
+							<div id="data"></div>
+						</div>
+					</div>
+
+					<div id="section-indicators" class="row hidden">
+						<div class="col-2">
+							<button class="sdg sdg_01">
+								<img id="img-sdg" src="images/sdgs/sdg_01.png" />
+								<div>
+									<h6>Puntuación</h6>
+									<h3 id="score-sdg"></h3>
+								</div>
+							</button>
+						</div>
+						<div class="col-10">
+							<ul id="list-indicators" class="list-group"></ul>
+						</div>
+					</div>
+
+
+				</div>
+
+
+	  </main>
+
+
+    <footer class="footer">
+    	<a href="#" class="button-top"><i class="fas fa-chevron-up"></i></a>
+    	<div class="container">
+    		<div class="row">
+	    		<div class="col-12">
+	    			Los datos usados en este portal tienen su origen en el informe realizado por La Red Española para el Desarrollo Sostenible (REDS), capítulo español de la red de Naciones Unidas SDSN. <a href="http://reds-sdsn.es/comunicado-lanzamiento-informe-ods-ciudades">“Los Objetivos de Desarrollo Sostenible en 100 ciudades españolas”</a>
+	    		</div>
+	    		<div class="col-6">
+        		&copy; <b>OpenODS Data.</b> Todos los derechos reservados. Versión Beta 0.1
+        	</div>
+	    		<div class="col-6 footer-logos">
+	    			<a href="http://enreda.coop/" target="_blank">
+              <img src="images/logos/enreda.png" alt="">
+            </a>
+            <a href="https://creandoconciencia.es/" target="_blank">
+              <img src="images/logos/creando_conciencia.png" alt="">
+            </a>
+	    		</div>
+	    	</div>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+			mapboxgl.accessToken = 'pk.eyJ1IjoiY2FyY2FtY3VlLWVucmVkYSIsImEiOiJjangwYmo2NXgxOHhlNDVwbTRqaW91anc2In0.1dAfMT9l7IJ0SPnC_NRydQ';
+			
+			// límites para el mapa
+			var bounds = [
+				[-23.601355, 24.289842], // coordenadas del suroeste [lng, lat]
+				[7.0505, 44.498708]  // coordenadas del noreste [lng, lat]
+			];
+			var map = new mapboxgl.Map({
+				container: 'mapbox-map', // contenedor donde se pintará el mapa
+				style: 'mapbox://styles/carcamcue-enreda/cjwufmtju1bi21dk9ajsw061y', // estilo del mapa mapbox://styles/mapbox/light-v10
+				center: [-4.045691, 40.214799], // posición inicial [lng, lat]
+				//minZoom: 5, // mínimo nivel de zoom
+				zoom: 4,
+				minZoom: 3, // nivel mínimo de zoom
+				//zoom: 5, // nivel de zoom
+				//maxBounds: bounds // límite desplazamiento mapa
+				attributionControl: false, // quitar atribuciones
+				logoPosition: 'bottom-right', // posición logo mapbox
+				defaultLanguage: 'es',
+			});
+
+
+			var overlay = document.getElementById('map-overlay'); // bloque para mostrar información
+			// Popup para mostrar título
+			var popup = new mapboxgl.Popup({
+				closeButton: false,
+				className: 'popup-map'
+			});
+			var hoveredStateId =  null; // estado del hover del ratón
+			var zoomThreshold = 8; // nivel de zoom de cambio
+			var zoomClick = 3; // nivel de zoom al hacer click
+
+			// evento - al cargar el mapa
+			map.on("load", function() { 
+
+				/*map.addSource('ods-cities', { // identificador de los datos
+				  type: 'vector', //tipo
+				  url: 'mapbox://carcamcue-enreda.2cn43okn', // origen de donde se obtienen los datos
+				});*/
+				map.addSource('ods-cities', { // identificador de los datos
+				  type: 'vector', //tipo
+				  url: 'mapbox://carcamcue-enreda.dh664yoq', // origen de donde se obtienen los datos
+				});
+				//debugger;
+/*				map.addSource('ods-cities', { // identificador de los datos
+				  type: 'geojson', //tipo
+				  data: 'data/espana-municipios.geojson', // origen de donde se obtienen los datos
+				  'generateId': true // variable para generar automáticamente ids, se utiliza para el hover
+				});
+
+*/			
+				// Modificar idioma mapa
+				//map.setLayoutProperty('country-label', 'text-field', ['get', 'name_es']);
+
+				// Quitar labels de ciudades y pueblos
+				map.style.stylesheet.layers.forEach(function(layer) {
+				    if (layer.type === 'symbol') {
+				       // map.removeLayer(layer.id);
+				    }
+				});
+
+				
+
+				// añadir capa
+/*				map.addLayer({
+					'id': 'global-shapes', // identificador
+                'source': 'global', // id los datos
+                'type': 'fill',	// tipo de capa (fill, line, circle...)
+                'maxzoom': 5, // zoom para controlar cuándo se visualiza la capa
+                'paint': {
+                    "fill-outline-color": "#FFFFFF", // contorno de la forma
+                    "fill-color": "#000000",
+                    "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 1, 0.5], // transparencia
+                }
+				});
+*/
+				/*map.addLayer({
+            'id': 'ods-cities-shapes', // identificador
+            'source': 'ods-cities', // id los datos
+            'source-layer': 'data-clm14k', // id los datos
+            'type': 'fill',	// tipo de capa (fill, line, circle...)
+            'minzoom': 1,
+            //'maxzoom': zoomThreshold, // zoom para controlar cuándo se visualiza la capa
+            'paint': {
+                "fill-outline-color": "#FFFFFF", // contorno de la forma
+                "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 1, 0.5], // transparencia
+
+
+                'fill-color': "#f2ecc9", // color de relleno
+                'fill-color': [ // color de relleno según valores
+												'interpolate',
+												['linear'],
+												['get', 'score'], // cast de string a number
+													0, bg_none,
+													30, bg_score_30,
+													40, bg_score_40,
+													50, bg_score_50,
+													60, bg_score_60,
+													70, bg_score_70,
+													80, bg_score_80
+												],
+
+
+
+
+								
+            }
+        });*/
+
+        map.addLayer({
+            'id': 'ods-cities-shapes', // identificador
+            'source': 'ods-cities', // id los datos
+            'source-layer': 'data-points-data-1pwh00', // id los datos
+            'type': 'circle',	// tipo de capa (fill, line, circle...)
+            'minzoom': 1,
+            //'maxzoom': zoomThreshold, // zoom para controlar cuándo se visualiza la capa
+            'paint': {
+            	'circle-radius': 
+									['interpolate',
+										['linear'],
+										['get', 'score'], // cast de string a number
+											0, 2,
+											30, 3,
+											40, 4,
+											50, 5,
+											60, 6,
+											70, 7,
+											80, 8
+									],
+                'circle-color': [ // color de relleno según valores
+									'interpolate',
+									['linear'],
+									['get', 'score'], // cast de string a number
+										0, bg_none,
+										30, bg_score_30,
+										40, bg_score_40,
+										50, bg_score_50,
+										60, bg_score_60,
+										70, bg_score_70,
+										80, bg_score_80
+								],
+								
+            }
+        });
+
+			});
+
+
+
+
+			// evento - al hacer click
+			// detectar click sobre paises
+			map.on('click', 'global-shapes', function (e) {
+				map.flyTo({
+					center: e.lngLat,
+					zoom: 5.1,
+					speed: 1.1,
+					curve: 2.5,
+					easing: function (t) { return t; }
+				});
+
+				$('#country').text( "- " + e.features[0].properties.name );
+				//map.setView(e.latlng, 13);
+			});
+
+			// evento - al hacer click
+			// detectar click sobre municipio
+			map.on('click', 'ods-cities-shapes', function (e) {
+
+				// zoom hasta el municipio
+				map.flyTo({
+					center: e.lngLat,
+					speed: 1.1,
+					//zoom: 6,
+					curve: 0,
+					easing: function (t) { return t; }
+				});
+
+				var location_id = e.features[0].properties.location_id;
+
+				$("#title-city").html( e.features[0].properties.name.replace(/_/g, " ") + " | ");
+				$("#data").html(""); // reiniciamos los datos
+
+				showElement("#reset-data-ods");
+				paintIndicators(location_id);
+				colorODS( location_id );
+				updateRadar(my_radar, location_id);
+
+			});
+
+
+
+
+
+			// evento - al mover el ratón
+			map.on('mousemove', 'ods-cities-shapes', function(e) {
+				// Change the cursor style as a UI indicator.
+				map.getCanvas().style.cursor = 'pointer';
+				 
+				// Single out the first found feature.
+				var feature = e.features[0];
+				 
+				// Display a popup with the name of the county
+				popup.setLngLat(e.lngLat)
+					.setHTML('<h2>' + feature.properties.name.replace(/_/g, " ") + '</h2><h3>Puntuación: <b>' + round(feature.properties.score) + '</b></h3>')
+					.addTo(map);
+
+
+					//debugger;
+					/*if (e.features.length > 0) {
+						if (hoveredStateId) {
+						map.setFeatureState({source: 'ods-cities', sourceLayer: 'data-a1vukm', id: hoveredStateId}, { hover: false});
+						}
+						hoveredStateId = feature.id; 
+						map.setFeatureState({source: 'ods-cities', sourceLayer: 'data-a1vukm', id: hoveredStateId}, { hover: true});
+						}*/
+			});
+
+			// evento - al mover el ratón fuera
+			map.on("mouseleave", "ods-cities-shapes", function() {
+				popup.remove(); // eliminar popup
+				/*if (hoveredStateId) {
+					map.setFeatureState({source: 'ods-cities', sourceLayer: 'data-a1vukm', id: hoveredStateId}, { hover: false});
+				}
+				hoveredStateId =  null;*/
+			});
+
+		// evento - al cargar los datos
+    map.on('data', function(e) {
+      if (e.dataType === 'source' && e.sourceId === 'ods-cities' && e.isSourceLoaded) {
+				document.getElementById("loader").style.visibility = "hidden";
+				
+			}
+		});
+
+		if( aux_data ){
+			obtieneData();
+			aux_data = false;
+		}
+	</script>
+</html>
