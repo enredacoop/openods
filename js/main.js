@@ -2,6 +2,13 @@
 var my_chart;
 var my_radar;
 var aux_data = true;
+var data_general_spain = [98.7,62.8,93.8,88.1,82.6,84.6,90.6,74.0,67.9,69.3,88.0,61.2,88.9,47.6,56.6,72.6,55.0];
+var summary = 0.0;
+for(i in data_general_spain){
+  summary = summary + i;
+}
+national_average = summary/17.0;
+
 
 var map_data = new Object();
 var location_id = "";
@@ -9,13 +16,12 @@ var ods_selected = "";
 
 
 /* Colores */
-var bg_score_80 =	"#36869A";
-var bg_score_80_trans = "rgba()"
-var bg_score_70 =	"#4FACC5";
-var bg_score_60 =	"#94CDDB";
-var bg_score_50 =	"#B7DDE8";
-var bg_score_40 =	"#DBEEF6";
-var bg_score_30 =	"#E6F2F7";
+var bg_score_80 =	"rgba(0, 123, 255, 1)";
+var bg_score_70 =	"#3395FF";
+var bg_score_60 =	"#4CA2FF";
+var bg_score_50 =	"#65AFFF";
+var bg_score_40 =	"#7FBCFF";
+var bg_score_30 =	"#99CAFF";
 var bg_none = "#595959";
 
 var default_color = "#5A5A5A";
@@ -408,12 +414,12 @@ function updateRadar(chart, location_id) {
     sdg_scores_1.push(map_data[location_id].ods[x].score);
   }
 
-  chart.data.datasets[0].data = sdg_scores_1;
-  chart.data.datasets[0].label = municipio;
+  chart.data.datasets[1].data = sdg_scores_1;
+  chart.data.datasets[1].label = municipio;
 
   chart.update({
     duration: 800,
-    easing: "easeOutBounce"
+    easing: "linear"
   });
 }
 
@@ -434,7 +440,7 @@ function resetChart(chart) {
 
   chart.update({
     duration: 800,
-    easing: "easeOutBounce"
+    easing: "linear"
   });
 }
 
@@ -444,10 +450,11 @@ function createChart() {
   var placesScores = new Map();
   var radarScores = new Map();
   var sdg_scores_1 = [];
-  var sdg_scores_2 = [];
+	var sdg_scores_2 = [];
+	var radarLabels = [];
 
   for (i in map_data) {
-    placesScores.set(map_data[i].name, map_data[i].score);
+    placesScores.set(map_data[i].name, Math.round(map_data[i].score * 1000) / 1000);
   }
   for (x in map_data[10037].ods){
     radarScores.set(x,[map_data[10037].ods[x].score,map_data[11004].ods[x].score]);
@@ -498,7 +505,9 @@ function createChart() {
             barPercentage: 1.0,
             categoryPercentage: 1.0,
             ticks: {
-              display: false
+              display: false,
+              min : 0,
+              max : 100
             }
           }
         ],
@@ -509,7 +518,9 @@ function createChart() {
             },
             barPercentage: 0.9,
             ticks: {
-              display: false
+              display: false,
+              min : 0,
+              max : 100
             }
           }
         ]
@@ -520,8 +531,15 @@ function createChart() {
   my_radar = new Chart(canvas_radar, {
     type: "radar",
     data: {
-      labels: Array.from(radarScores.keys()),
+      labels: ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17"],
       datasets: [
+        {
+          label: "España ",
+          data: data_general_spain,
+          borderColor: gray_trans,
+          backgroundColor: gray_trans,
+          borderWidth: 2
+        },
         {
           label: "",
           data: [],
@@ -529,18 +547,11 @@ function createChart() {
           backgroundColor: gray_trans,
           borderWidth: 2
         },
-        {
-          label: "Puntuación",
-          data: [98.7,62.8,93.8,88.1,82.6,84.6,90.6,74.0,67.9,69.3,88.0,61.2,88.9,47.6,56.6,72.6,55.0],
-          borderColor: gray_trans,
-          backgroundColor: gray_trans,
-          borderWidth: 2
-        },
       ]
     },
     options: {
       tooltips: {
-        displayColors: false
+				displayColors: false
       },
       legend: {
         display: false
@@ -548,7 +559,14 @@ function createChart() {
       title: {
         display: false,
         text: "Titulo"
-      }
+      },
+      scale : {
+        ticks : {
+          min : 0,
+          max : 100,
+          stepSize : 20
+        }
+      },
     }
   });
 }

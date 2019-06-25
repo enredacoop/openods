@@ -1,0 +1,226 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Cómo Funciona | Open ODS Data</title>
+
+
+    <!-- CSS Externs -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+    <!-- Custom Styles -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Mapbox Library -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- JS Externs -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+		<!-- Chart.js Library-->
+		<script src="js/Chart.js"></script>
+
+    <!-- Custom Javascripts -->
+    <script src="js/main.js"></script>
+  </head>
+  <body class="d-flex flex-column h-100" ondragstart="return false">
+    <header>
+    	<nav class="navbar navbar-expand-lg navbar-light">
+			  <a class="navbar-brand" href="#" target="_blank">OpenODS Data</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item">
+			        <a class="nav-link" href="index.html">Mapa</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link active" href="como_funciona.html">Cómo funciona</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="contacto.html">Contacto</a>
+			      </li>
+			    </ul>
+			  </div>
+			</nav>
+	  </header>
+
+		<main role="main" class="flex-shrink-0">
+			<section id="section-title">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<h1>Cómo Funciona</h1>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="section-description">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<p>
+								OpenODS Data es un proyecto para facilitar la estandarización de la información asociada a los Objetivo de Desarrollo Sostenibles con el objetivo de poder recopilar la mayor cantidad de información para poder generar una fuente de consulta de datos pública y abierta.
+							</p>
+							<p>
+								OpenODS Data visualiza actualmente  los indicadores de 100 ciudades españolas recogidos a partir del informe realizado por La Red Española para el Desarrollo Sostenible (REDS), capítulo español de la red de Naciones Unidas SDSN. <a href="http://reds-sdsn.es/comunicado-lanzamiento-informe-ods-ciudades">“Los Objetivos de Desarrollo Sostenible en 100 ciudades españolas”</a> 
+							</p>
+							<p>
+								Estos datos solo son el punto de partida. Todas las entidades, tanto públicas como privadas, que quieran mostrar su información relacionada con los ODS pueden usar este canal en la nube para compartir sus datos. 
+							</p>
+							<p>
+								Todos los datos recopilados en OpenODS Data se liberan mediante una API para que puedan ser reutilizados por cualquier organización.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="section-text">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-6">
+							<h2>Actualiza indicadores</h2>
+							<p>
+								Permite a las entidades registradas actualizar la información de sus indicadores ODS, manteniendo un histórico de los valores y permitiendo visualizar la evolución de los indicadores en el tiempo. Esta gestión permite realizar un estudio de la evolución de los indicadores y una comparación histórica de éstos frente a otras entidades.
+							</p>
+						</div>
+						<div class="col-6 wrapper-img">
+							<img src="images/capturas/openods-captura_1.png" alt="Captura 1" class="img-right">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="section-text">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 text-center">
+							<h2>Personaliza tus ODS con los indicadores que hayas localizado</h2>
+							<p>
+								Los indicadores que se muestran en el mapa son los recogidos por la Red Española para el Desarrollo Sostenible (REDS). Las entidades registradas que hayan realizado un proceso de localización de indicadores , pueden añadir sus propios indicadores.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="section-text">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-6">
+							<h2>Gestiona iniciativas ODS</h2>
+							<p>
+								Permite dar de alta todas las iniciativas y actividades que desarrolle una entidad asociada a los ODS. Los datos recopilados para cada iniciativa nos permiten:
+								<ul>
+									<li>Medir el impacto de las iniciativas.</li>
+									<li>Mostrar las iniciativas más relevantes para replicarlas.</li>
+									<li>Hacer un seguimiento activo de las iniciativas asociadas a los indicadores.</li>
+								</ul>
+							</p>
+						</div>
+						<div class="col-6 wrapper-img">
+							<img src="images/capturas/openods-captura_1.png" alt="Captura 1" class="img-right">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="section-text">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-6 wrapper-img">
+							<img src="images/capturas/openods-captura_1.png" alt="Captura 1" class="img-left">
+						</div>
+						<div class="col-6">
+							<h2>Compara entidades</h2>
+							<p>
+								Compara varias entidades del mismo tipo para visualizar la evolución de sus ODS, además de contrastar las iniciativas que han realizar.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="section-text">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-6">
+							<h2>Comparte datos en tu sitio web</h2>
+							<p>
+								Este módulo permite compartir en el sitio web de la entidad los mapas y visualizaciones generadas en OpenODS Data, mediante un código que para embeber la información.
+							</p>
+						</div>
+						<div class="col-6 wrapper-img">
+							<img src="images/capturas/openods-captura_1.png" alt="Captura 1" class="img-right">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="section-text">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-6 wrapper-img">
+							<img src="images/capturas/openods-captura_1.png" alt="Captura 1" class="img-left">
+						</div>
+						<div class="col-6">
+							<h2>Personaliza el perfil de la entidad</h2>
+							<p>
+								Para entidades que quieran ampliar su información asociada a los ODS este módulo les permitirá añadir varios widgets a su página principal.
+								<ul>
+									<li>Widget de noticias mediante RSS.</li>
+									<li>Widget de redes sociales para mostrar los tweets de su cuenta o hashtag.</li>
+									<li>Widget de contenido para ampliar la información de la entidad.</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			
+			<section id="section-contact">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-6">
+							<h2>¿Alguna duda?</h2>
+						</div>
+						<div class="col-6 text-right">
+							<a href="contacto.html" class="btn btn-primary">Contáctenos</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+    	<a href="#" class="button-top"><i class="fas fa-chevron-up"></i></a>
+    	<div class="container">
+    		<div class="row">
+	    		<div class="col-12 mb-60">
+	    			Los datos usados en este portal tienen su origen en el informe realizado por La Red Española para el Desarrollo Sostenible (REDS), capítulo español de la red de Naciones Unidas SDSN. <a href="http://reds-sdsn.es/comunicado-lanzamiento-informe-ods-ciudades">“Los Objetivos de Desarrollo Sostenible en 100 ciudades españolas”</a>
+	    		</div>
+	    		<div class="col-6">
+        		&copy; <b>OpenODS Data.</b> Todos los derechos reservados. Versión Beta 0.1
+
+        		<div class="footer-logos">
+		    			<a href="http://enreda.coop/" target="_blank">
+	              <img src="images/logos/enreda.png" alt="">
+	            </a>
+	            <a href="https://creandoconciencia.es/" target="_blank">
+	              <img src="images/logos/creando_conciencia.png" alt="">
+	            </a>
+		    		</div>
+        	</div>
+        	<div class="col-6 text-right">
+        		<a href="aviso_legal.html">Aviso legal</a>
+        		|
+        		<a href="#">Condiciones de uso</a>
+
+        	</div>
+	    	</div>
+      </div>
+    </footer>
+</html>

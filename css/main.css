@@ -12,15 +12,23 @@
 		00 Basics
 			00.01 Margins
 			00.02 Paddings
+			00.03 Backgrounds
 		01 Navbar
 		02 Footer
 		03 Section Map
 		04 Section Data
 		05 Section Indicators
-		06 SDGs
-		07 Buttons
-		08 Badges
-		09 Charts
+		06 Section Title
+		07 Section Description
+		08 Section Text
+		09 Section Contact
+		10 Images
+
+		09 SDGs
+		10 Buttons
+		11 Badges
+		12 Charts
+		13 Tables
  
 ---------------------------------------------------------------- */
 /* ----------------------------------------------------------------
@@ -30,6 +38,9 @@
 	--default: 	#5A5A5A;
 	--light: 		#ECECEC;
 	--gray: 		#7B7B7B;
+
+	--primary: 		#007bff;
+	--primary-50:	rgba(0,123,255,.5);
 
 	--default-trans:  rgba(123,123,123,.66);
 	--light-trans:  	rgba(236,236,236,0.33);
@@ -60,12 +71,12 @@
 	--bg-green: 	#1D8635;
 	--bg-none: 		#595959;
 
-	--bg-score-80:	#36869A;
-	--bg-score-70:	#4FACC5;
-	--bg-score-60:	#94CDDB;
-	--bg-score-50:	#B7DDE8;
-	--bg-score-40:	#DBEEF6;
-	--bg-score-30:	#E6F2F7;
+	--bg-score-80:	rgb(0, 123, 255, 1);
+	--bg-score-70:	#3395FF;
+	--bg-score-60:	#4CA2FF;
+	--bg-score-50:	#65AFFF;
+	--bg-score-40:	#7FBCFF;
+	--bg-score-30:	#99CAFF;
 
 	--shadow-primary: 0px -3px 6px rgba(0,0,0,.13);
 	--shadow-panel: 0px 1px 6px rgba(0,0,0,.13);
@@ -81,6 +92,7 @@ body {
 	color: var(--default);
 	background: var(--light);
 	font-size: 14px;
+	overflow-x: hidden;
 }
 main {
 	margin-bottom: 60px;
@@ -119,6 +131,15 @@ button {
 .ptb-30 {
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+.pt-20 {
+	padding-top: 20px !important;
+}
+/* ----------------------------------------------------------------
+	[ 00.03 Backgrounds ]
+-----------------------------------------------------------------*/
+.bg-white {
+	background-color: #FFFFFF !important;
 }
 
 /* ----------------------------------------------------------------
@@ -272,7 +293,7 @@ footer .footer-logos img {
   top: 0;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  box-shadow: var(--shadow-primary);
+  /*box-shadow: var(--shadow-primary);*/
   border-bottom: 1px solid var(--light);
   background: #FFFFFF;
   z-index: 9;
@@ -340,6 +361,100 @@ footer .footer-logos img {
 	}
 
 
+/* ----------------------------------------------------------------
+	[ 06 Section Title ]
+-----------------------------------------------------------------*/
+#section-title {
+	background: var(--primary);
+}
+#section-title h1 {
+	text-align: left;
+	padding: 0px;
+	padding-top: 50px; 
+	padding-bottom: 50px;
+	background: transparent;
+	color: var(--light);
+}
+
+/* ----------------------------------------------------------------
+	[ 07 Section Description ]
+-----------------------------------------------------------------*/
+#section-description {
+	color: var(--light);
+	padding: 60px 0px; 
+	background: var(--primary-50);
+	font-size: 17px;
+}
+	#section-description a {
+		color: var(--primary);
+	}
+
+
+/* ----------------------------------------------------------------
+	[ 08 Section Text ]
+-----------------------------------------------------------------*/
+#section-text {
+	padding: 120px 0px;
+	font-size: 17px;
+	color: var(--gray);
+}
+#section-text:nth-child(even) {
+	background: #FFFFFF;
+}
+	#section-text h2 {
+		color: var(--primary);
+		margin-bottom: 20px;
+	}
+#section-text .wrapper-img {
+    position: relative;
+    display: block;
+    height: 460px;
+}
+	#section-text .wrapper-img img {
+	  height: 100%;
+	  max-height: 470px;
+	  box-shadow: 0 4px 16px 0 rgba(0,0,0,.13);
+	}
+	#section-text .wrapper-img img.img-left {
+		margin-right: 100px;
+    position: absolute;
+    right: 0px;
+	}
+	#section-text .wrapper-img img.img-right {
+		margin-left: 100px;
+    position: absolute;
+    left: 0px;
+	}
+
+
+/* ----------------------------------------------------------------
+	[ 09 Section Contact ]
+-----------------------------------------------------------------*/
+#section-contact {
+	background: var(--primary-50);
+	padding: 30px 0px;
+}
+	#section-contact h2 {
+		color: var(--light); 
+	}
+	#section-contact a {
+		font-size: 14px;
+	}
+
+/* ----------------------------------------------------------------
+	[ 10 Images ]
+-----------------------------------------------------------------*/
+.block-logos img {
+	width: 150px;
+  filter: grayscale(100%);
+  margin: 20px;
+}
+	.block-logos a {
+		text-decoration: none;
+	}
+	.block-logos img:hover {
+	  filter: grayscale(0%);
+	}
 
 
 /* ----------------------------------------------------------------
@@ -525,3 +640,23 @@ button.sdg, a.sdg {
 	max-height: 350px;
 }
 
+/* ----------------------------------------------------------------
+	[ 13 Tables ]
+-----------------------------------------------------------------*/
+dl {
+  width: 49%;
+  clear: left;
+  float: left;
+}
+dd {
+  width: 49%;
+  float: left;
+  text-align: right;
+}
+dl.first, dd.first {
+  border-top: 0px;
+}
+dl, dd {
+  padding-top: 10px; 
+  border-top: 1px solid var(--light);
+}
