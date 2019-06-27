@@ -31,7 +31,7 @@
   <body class="d-flex flex-column h-100" ondragstart="return false">
     <header>
     	<nav class="navbar navbar-expand-lg navbar-light">
-			  <a class="navbar-brand" href="#" target="_blank">OpenODS Data</a>
+			  <a class="navbar-brand" href="index.html">OpenODS Data</a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -39,7 +39,7 @@
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="index.html">Mapa <span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="index.html">Mapa</a>
 			      </li>
 			      <li class="nav-item">
 			        <a class="nav-link" href="como_funciona.html">Cómo funciona</a>
@@ -110,6 +110,21 @@
 					<!-- Gráficas -->
 					<div class="row justify-content-center ptb-30">
 						<div class="col-6">
+							<div class="wrapper-infochart">
+								<div class="block-infochart">
+									<h5>Media Nacional</h5>
+									<span id="infochart-global"></span>
+								</div>
+								<div class="block-infochart hidden">
+									<h5>Ranking</h5>
+									<span id="infochart-ranking"></span>
+									<span id="infochart-number-cities" class="small-info"></span>
+								</div>
+								<div class="block-infochart hidden">
+									<h5>Puntuación</h5>
+									<span id="infochart-score"></span>
+								</div>
+							</div>
 							<canvas id="my-chart"></canvas>
 						</div>
 						<div class="col-6">
@@ -132,7 +147,7 @@
 							<div class="legend-global">
 								<h4>Comparativa</h4>
 								<div><span class="bg-gray-trans"></span><span>Puntuación media del estado <a href="https://dashboards.sdgindex.org/#/ESP" target="_blank"><i class="fas fa-external-link-alt"></i> Fuente</a></span></div>
-								<div><span class="bg-default"></span><span>Puntuación ciudad seleccionada</span></div>
+								<div><span class="bg-primary"></span><span>Puntuación ciudad seleccionada</span></div>
 							</div>
 						</div>
 					</div>
@@ -196,7 +211,7 @@
 	    			Los datos usados en este portal tienen su origen en el informe realizado por La Red Española para el Desarrollo Sostenible (REDS), capítulo español de la red de Naciones Unidas SDSN. <a href="http://reds-sdsn.es/comunicado-lanzamiento-informe-ods-ciudades">“Los Objetivos de Desarrollo Sostenible en 100 ciudades españolas”</a>
 	    		</div>
 	    		<div class="col-6">
-        		&copy; <b>OpenODS Data.</b> Todos los derechos reservados. Versión Beta 0.2
+        		&copy; <b>OpenODS Data.</b> Todos los derechos reservados. Versión Beta 0.3
 
         		<div class="footer-logos">
 		    			<a href="http://enreda.coop/" target="_blank">
