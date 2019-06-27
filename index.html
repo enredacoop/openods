@@ -29,28 +29,11 @@
     <script src="js/main.js"></script>
   </head>
   <body class="d-flex flex-column h-100" ondragstart="return false">
-    <header>
-    	<nav class="navbar navbar-expand-lg navbar-light">
-			  <a class="navbar-brand" href="index.html">OpenODS Data</a>
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-			  </button>
 
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item active">
-			        <a class="nav-link" href="index.html">Mapa</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="como_funciona.html">Cómo funciona</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="contacto.html">Contacto</a>
-			      </li>
-			    </ul>
-			  </div>
-			</nav>
-	  </header>
+
+  	<!-- Navbar -->
+  	<div w3-include-html="includes/_navbar.html"></div>
+
 
 		<main role="main" class="flex-shrink-0">
 	    <section class="section-map">
@@ -86,7 +69,10 @@
 						</div>
 
 						<div class="legend-global over-map top-right">
-							<h4>Filtro</h4>
+							<h4>
+								Filtro
+								<i class="far fa-question-circle icon-help" data-toggle="tooltip" data-placement="right" data-html="true" title="Realiza filtros rápidos. Estos filtros mostrarán en el mapa el tipo de entidad seleccionada. <b>Funcionalidad no disponible.</b>"></i>
+							</h4>
 							<div><a href="#">Ayuntamientos</a></div>
 							<div><a href="#">Diputaciones</a></div>
 							<div><a href="#">Comunidades Autónomas</a></div>
@@ -169,19 +155,27 @@
 					<div class="row justify-content-around">
 						<div class="col-4 m-10">
 							<div class="legend-global">
-								<h4>Puntuación</h4>
-								<div><span class="bg-green"></span><span>Objetivo conseguido</span></div>
-								<div><span class="bg-yellow"></span><span>Los desafíos permanecen</span></div>
-								<div><span class="bg-orange"></span><span>Quedan importantes desafíos</span></div>
-								<div><span class="bg-red"></span><span>Los principales desafíos permanecen</span></div>
-								<div><span class="bg-none"></span><span>Información no disponible</span></div>
+								<h4>
+									Puntuación
+									<i class="far fa-question-circle icon-help" data-toggle="tooltip" data-placement="right" title="Cada color indica el grado de mejora de los ODS respecto a la puntuación del año anterior."></i>
+								</h4>
+								<div><span class="bg-green"></span><span>Objetivo mejorado satisfactoriamente</span></div>
+								<div><span class="bg-yellow"></span><span>Objetivo poco mejorado</span></div>
+								<div><span class="bg-orange"></span><span>Objetivo poco empeorado</span></div>
+								<div><span class="bg-red"></span><span>Objetivo muy empeorado</span></div>
+								<div><span class="bg-none"></span><span>
+									Información no disponible 
+									<i class="far fa-question-circle" data-toggle="tooltip" data-placement="right" title="El año anterior no había ninguna puntuación para el objetivo."></i>
+								</span></div>
 							</div>
 						</div>
 						<div class="col-4 m-10">
 							<div class="legend-global">
-								<h4>Comparativa</h4>
-								<div><span class="bg-gray-trans"></span><span>Puntuación media del estado <a href="https://dashboards.sdgindex.org/#/ESP" target="_blank" class="help"><i class="fas fa-external-link-alt"></i> Fuente</a></span></div>
-								<div><span class="bg-primary"></span><span>Puntuación ciudad seleccionada</span></div>
+								<h4>
+									Comparativa <i class="far fa-question-circle icon-help" data-toggle="tooltip" data-placement="right" title="En el gráfico se muestra la puntuación de los ODS. Cuando hay una ciudad seleccionada se puede comparar visualmente la puntuación de sus ODS con el del Estado."></i>
+								</h4>
+								<div><span class="bg-gray-trans"></span><span>Puntuación ODS del estado <a href="https://dashboards.sdgindex.org/#/ESP" target="_blank" class="help"><i class="fas fa-external-link-alt"></i> Fuente</a></span></div>
+								<div><span class="bg-primary"></span><span>Puntuación ODS ciudad seleccionada</span></div>
 							</div>
 						</div>
 					</div>
@@ -237,34 +231,10 @@
 	  </main>
 
 
-    <footer class="footer">
-    	<a href="#" class="button-top"><i class="fas fa-chevron-up"></i></a>
-    	<div class="container">
-    		<div class="row">
-	    		<div class="col-12 mb-60">
-	    			Los datos usados en este portal tienen su origen en el informe realizado por La Red Española para el Desarrollo Sostenible (REDS), capítulo español de la red de Naciones Unidas SDSN. <a href="http://reds-sdsn.es/comunicado-lanzamiento-informe-ods-ciudades">“Los Objetivos de Desarrollo Sostenible en 100 ciudades españolas”</a>
-	    		</div>
-	    		<div class="col-6">
-        		&copy; <b>OpenODS Data.</b> Todos los derechos reservados. Versión Beta 0.4
+    <!-- Footer -->
+  	<div w3-include-html="includes/_footer.html"></div>
 
-        		<div class="footer-logos">
-		    			<a href="http://enreda.coop/" target="_blank">
-	              <img src="images/logos/enreda.png" alt="">
-	            </a>
-	            <a href="https://creandoconciencia.es/" target="_blank">
-	              <img src="images/logos/creando_conciencia.png" alt="">
-	            </a>
-		    		</div>
-        	</div>
-        	<div class="col-6 text-right">
-        		<a href="aviso_legal.html">Aviso legal</a>
-        		|
-        		<a href="#">Condiciones de uso</a>
 
-        	</div>
-	    	</div>
-      </div>
-    </footer>
   </body>
 
   <script>
@@ -454,6 +424,7 @@
 				paintIndicators(location_id);
 				colorODS( location_id );
 				updateRadar(my_radar, location_id);
+				clearSearchCities();
 
 			});
 

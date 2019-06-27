@@ -52,6 +52,10 @@ var bg_yellow_50 = 	"#F7DE9D";//"#F2BC3C";
 var bg_green_50 = 	"#8EC29A"; //"#1D8635";
 
 $(document).ready(function() {
+
+	includeHTML();
+
+	
 	$('*[data-toggle="tooltip"]').tooltip();
 
 	// Click en botones de reset
@@ -61,6 +65,7 @@ $(document).ready(function() {
 	});
 	$('#reset-data-ods').on('click', function() {
     resetChart(my_chart);
+    clearSearchCities();
 		colorMapByScore();
 		hiddenElement("#reset-data-ods");
     resetMap();
@@ -110,6 +115,7 @@ $(document).ready(function() {
 	    paintIndicators(location_id);
 	    colorODS(location_id);
 	    updateRadar(my_radar, location_id);
+    	clearSearchCities();
 	    
 	    //debugger;
 	    //my_chart.getElementsAtEvent(e)[0].$previousStyle.backgroundColor = primary_color;
@@ -150,10 +156,14 @@ $(document).ready(function() {
   });
 
   $('#clear-seach-cities').on('click', function() {
-  	$("#search-cities-selected").val("");
+  	clearSearchCities();
   	$("#search-cities-selected").focus();
   });
 });
+
+function clearSearchCities() {
+	$("#search-cities-selected").val("");
+}
 
 
 function paintIndicators( location_id ){
@@ -175,14 +185,22 @@ function paintIndicators( location_id ){
 function paintIndicatorsODS( location_id, ods_selected){
 	showElement( $("#section-indicators") );
 	$("#section-indicators #img-sdg").attr("src", "images/sdgs/es/sdg_" + ods_selected + ".png");
-	$("#section-indicators #score-sdg").text( round( map_data[location_id].ods["sdg"+ods_selected].score ) );
+
+	var ods_score = map_data[location_id].ods["sdg"+ods_selected].score;
+	if( ods_score==null){
+		$("#section-indicators #score-sdg").text( "NA" );
+	}else{
+		$("#section-indicators #score-sdg").text( round( map_data[location_id].ods["sdg"+ods_selected].score ) );
+	}
+
 	$("#section-indicators #list-indicators").html("");
 	colorODSindicator();
 
 	$.each( map_data[location_id].ods["sdg"+ods_selected].indicators, function(key, value){
+		var ods_score = value.score==null ? "NA" : round(value.score);
 		code = '<li class="list-group-item d-flex justify-content-between align-items-center">'
 					    + getNameIndicator(value.id) +
-							'<span class="badge badge-pill ' + getColor(value.color, "class-css") + '">' + round(value.score) + '</span>' +
+							'<span class="badge badge-pill ' + getColor(value.color, "class-css") + '">' + ods_score + '</span>' +
 					  '</li>';
 		$("#section-indicators #list-indicators").append( code );
 	});
@@ -355,7 +373,8 @@ function paintDataChartRanking( value ){
 	$('#infochart-ranking').parent().removeClass("hidden");
 }
 function paintDataChartScoreCity( value ){
-	$('#infochart-score').html( value );
+	var ods_score = value==0 ? "NA" : value;
+	$('#infochart-score').html( ods_score );
 	$('#infochart-score').parent().removeClass("hidden");
 }
 
@@ -626,25 +645,9 @@ function updateCityGraph( name_city, ranking_city ) {
 	}
 }
 
+/* Función para restaurar el gráfico de barras y el gráfico de radar */
 function resetChart(chart) {
-  var placesScores = new Map();
-
-  for (i in map_data) {
-    placesScores.set(map_data[i].name, map_data[i].score);
-  }
-
-  var sortedPlacesScores = new Map(
-    [...placesScores.entries()].sort((a, b) => b[1] - a[1])
-  );
-
-  chart.data.labels = Array.from(sortedPlacesScores.keys());
-  chart.data.datasets[0].data = Array.from(sortedPlacesScores.values());
-  chart.data.datasets[0].backgroundColor = [];
-
-  chart.update({
-    duration: 800,
-    easing: "linear"
-  });
+  createChart();
 }
 
 function createChart() {
@@ -865,4 +868,35 @@ function getNameIndicator( value ){
 		case "solidez": title = "Proporción presupuestaria entre ingresos de recursos propios frente al total de los ingresos"; break;
 	}
 	return title;
+}
+
+
+
+
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
 }
