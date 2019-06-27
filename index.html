@@ -74,7 +74,7 @@
 			        <span>Cargando datos...</span>
 			    	</div>
 
-			    	<div class="legend-global over-map">
+			    	<div class="legend-global over-map top-left">
 							<h4>Puntuación global</h4>
 							<div><span class="bg-score-80"></span><span>> 80</span></div>
 							<div><span class="bg-score-70"></span><span>70 - 80</span></div>
@@ -83,6 +83,15 @@
 							<div><span class="bg-score-40"></span><span>40 - 50</span></div>
 							<div><span class="bg-score-30"></span><span>< 50</span></div>
 							<div><span class="bg-score-none"></span><span>Información no disponible</span></div>
+						</div>
+
+						<div class="legend-global over-map top-right">
+							<h4>Filtro</h4>
+							<div><a href="#">Ayuntamientos</a></div>
+							<div><a href="#">Diputaciones</a></div>
+							<div><a href="#">Comunidades Autónomas</a></div>
+							<div><a href="#">Universidades</a></div>
+							<div><a href="#">Empresas</a></div>
 						</div>
 
 
@@ -96,12 +105,21 @@
 					<div class="row wrapper-block-title">
 						<div class="col-12 block-title">
 							<div class="row">
-								<div class="col-8">
+								<div class="col-12">
 									<div class="wrapper-title"><h2><span id="title-city"></span><span id="title">Objetivos y metas de desarrollo sostenible</span></h2></div>
 								</div>
-								<div class="col-4 text-right">
+								<div class="col-6">
 									<a id="reset-data-ods" href="#" class="badge badge-primary badge-reset hidden">Ver puntuación general</a>
 									<!--a id="reset-data-map" href="#" class="badge badge-primary badge-reset">Volver al listado</a-->
+								</div>
+								<div class="col-6 text-right">
+
+									<div class="block-search">
+										<input id="search-cities-selected" list="search-cities" name="browser">
+									  <datalist id="search-cities"></datalist>
+									  <a id="clear-seach-cities" class="submit"><i class="fas fa-times"></i></a>
+									</div>
+
 								</div>
 							</div>
 						</div>
@@ -112,16 +130,32 @@
 						<div class="col-6">
 							<div class="wrapper-infochart">
 								<div class="block-infochart">
-									<h5>Media Nacional</h5>
+									<h5>
+										Puntuación Estado
+										<i class="far fa-question-circle icon-help" data-toggle="tooltip" data-placement="right" title="Puntuación general del Estado."></i>
+									</h5>
+									<span id="infochart-state"></span>
+								</div>
+								<div class="block-infochart">
+									<h5>
+										Media ciudades
+										<i class="far fa-question-circle icon-help" data-toggle="tooltip" data-placement="right" title="Puntuación media de las ciudades. Esta puntuación es la media de los valores que se están visualizando en la gráfica."></i>
+									</h5>
 									<span id="infochart-global"></span>
 								</div>
 								<div class="block-infochart hidden">
-									<h5>Ranking</h5>
+									<h5>
+										Ranking
+										<i class="far fa-question-circle icon-help" data-toggle="tooltip" data-placement="right" title="Posición de la ciudad seleccionada en el ranking."></i>
+									</h5>
 									<span id="infochart-ranking"></span>
 									<span id="infochart-number-cities" class="small-info"></span>
 								</div>
 								<div class="block-infochart hidden">
-									<h5>Puntuación</h5>
+									<h5>
+										Puntuación
+										<i class="far fa-question-circle icon-help" data-toggle="tooltip" data-placement="right" title="Puntuación que tiene la ciudad seleccionada. Si está marcado algún ODS, esta puntuación es la que tiene la ciudad en dicho ODS."></i>
+									</h5>
 									<span id="infochart-score"></span>
 								</div>
 							</div>
@@ -146,7 +180,7 @@
 						<div class="col-4 m-10">
 							<div class="legend-global">
 								<h4>Comparativa</h4>
-								<div><span class="bg-gray-trans"></span><span>Puntuación media del estado <a href="https://dashboards.sdgindex.org/#/ESP" target="_blank"><i class="fas fa-external-link-alt"></i> Fuente</a></span></div>
+								<div><span class="bg-gray-trans"></span><span>Puntuación media del estado <a href="https://dashboards.sdgindex.org/#/ESP" target="_blank" class="help"><i class="fas fa-external-link-alt"></i> Fuente</a></span></div>
 								<div><span class="bg-primary"></span><span>Puntuación ciudad seleccionada</span></div>
 							</div>
 						</div>
@@ -211,7 +245,7 @@
 	    			Los datos usados en este portal tienen su origen en el informe realizado por La Red Española para el Desarrollo Sostenible (REDS), capítulo español de la red de Naciones Unidas SDSN. <a href="http://reds-sdsn.es/comunicado-lanzamiento-informe-ods-ciudades">“Los Objetivos de Desarrollo Sostenible en 100 ciudades españolas”</a>
 	    		</div>
 	    		<div class="col-6">
-        		&copy; <b>OpenODS Data.</b> Todos los derechos reservados. Versión Beta 0.3
+        		&copy; <b>OpenODS Data.</b> Todos los derechos reservados. Versión Beta 0.4
 
         		<div class="footer-logos">
 		    			<a href="http://enreda.coop/" target="_blank">

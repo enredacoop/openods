@@ -6,12 +6,11 @@ var data_general_spain = [98.7,62.8,93.8,88.1,82.6,84.6,90.6,74.0,67.9,69.3,88.0
 var summary = 0.0;
 
 for(i in data_general_spain){
-	//debugger
   summary += data_general_spain[i];
 }
 
 /* Valores calculados */
-var score_ods_national_average = round( summary/17.0 );
+var score_national = round( summary/17.0 );
 var score_cities = 0;
 var score_cities_average = 0;
 var number_cities = 0;
@@ -53,6 +52,7 @@ var bg_yellow_50 = 	"#F7DE9D";//"#F2BC3C";
 var bg_green_50 = 	"#8EC29A"; //"#1D8635";
 
 $(document).ready(function() {
+	$('*[data-toggle="tooltip"]').tooltip();
 
 	// Click en botones de reset
 	$('#reset-data-map').on('click', function() {
@@ -116,7 +116,43 @@ $(document).ready(function() {
 	    //my_chart.render();
 
   	}
-  })
+  });
+
+
+  // Búsqueda realizada
+  $('#search-cities-selected').on('change', function() {
+  	city = $(this).val();
+  	var city_finded = false;
+
+  	$.each( $('#search-cities option'), function(key, element){
+  		if( city==element.value ){
+  			location_id = $(element).attr("data-location");
+  			city_finded = true;
+  		}
+  	});
+
+  	if( city_finded ){
+  		map.flyTo({
+				center: map_data[ location_id ].coordinates,
+				speed: 1.1,
+				curve: 0,
+				easing: function (t) { return t; }
+	    });
+
+	  	$("#title-city").html( city + " | ");
+			$("#data").html(""); // reiniciamos los datos
+
+	  	updateChart(this, my_chart);
+	  	paintIndicators(location_id);
+			colorODS( location_id );
+			updateRadar(my_radar, location_id);
+  	}
+  });
+
+  $('#clear-seach-cities').on('click', function() {
+  	$("#search-cities-selected").val("");
+  	$("#search-cities-selected").focus();
+  });
 });
 
 
@@ -264,8 +300,9 @@ function obtieneData() {
 	getDataJSON( ).done(function ( data_JSON ) { 
 		$.map( data_JSON, function(file) {
 			arrayData = new Object();
-			//debugger
-			arrayData[ "name" ] = file.name.replace(/_/g, " ") ; // hacemos replace para quitar los guiones bajos "_"
+			var name = file.name.replace(/_/g, " ");
+
+			arrayData[ "name" ] = name ; // hacemos replace para quitar los guiones bajos "_"
 			arrayData[ "location_id" ] = file.location_id ;
 			arrayData[ "score" ] = file.score ;
 			arrayData[ "ods" ] = file.ods ;
@@ -276,6 +313,7 @@ function obtieneData() {
 			score_cities += file.score;
 			number_cities++;
 
+			createSearch( name, file.location_id );
 		});
 
 		score_cities_average = round( score_cities / number_cities*1.0 );
@@ -284,10 +322,33 @@ function obtieneData() {
 	});
 }
 
-/* Funciones para pintar información que aparece encima de la gráfica de barras */
+function createSearch( name, location_id ) {
+	code = '<option value="' + name + '" data-location="' + location_id + '"></option>';
+	$("#search-cities").append( code );
+}
+
+/* 
+|		Funciones para pintar información que aparece encima de la gráfica de barras 
+*/
+
+/* 	Función para pintar puntuación del estado, total de ciudades y media de ciudades
+|		encima de la gráfica al cargar los datos.
+|		Se utiliza en la función obtieneData()
+*/
 function paintDataChart(){
 	$('#infochart-global').html( score_cities_average );
 	$('#infochart-number-cities').html( "(de " + number_cities + ")" );
+	$('#infochart-state').html( score_national );
+}
+/* 	Función que calcula la media de los valores que se pintan en ese instante en la
+|		gráfica y la pinta encima de la misma, además, pinta la puntuación del estado.
+*/
+function paintDataChartAverage() {
+	var sum = my_chart.data.datasets[0].data.reduce( function(a,b) { return a + b; });
+	var avg = sum / my_chart.data.datasets[0].data.length;
+	$('#infochart-global').html( round(avg) );
+
+	$('#infochart-state').html( score_national );
 }
 function paintDataChartRanking( value ){
 	$('#infochart-ranking').html( value );
@@ -297,12 +358,9 @@ function paintDataChartScoreCity( value ){
 	$('#infochart-score').html( value );
 	$('#infochart-score').parent().removeClass("hidden");
 }
-function paintDataChartAverage() {
-	var sum = my_chart.data.datasets[0].data.reduce( function(a,b) { return a + b; });
-	var avg = sum / my_chart.data.datasets[0].data.length;
-	$('#infochart-global').html( round(avg) );
-}
 
+
+/*	Función que se ejecuta al clicar sobre un ODS */
 function changeSDG(element) {
 	data_sdg = $(element).attr('data-sdg'); // cogemos el dato sdg clickeado
 	ods_selected = data_sdg;
@@ -432,68 +490,71 @@ function findItemsBySDG(data_items, id_search) {
 }
 
 function updateChart(element, chart) {
-  if( ods_selected!="") {var places = new Map();
-  var scores = [];
-  var colors = [];
+  if( ods_selected!="") {
+  	var places = new Map();
+	  var scores = [];
+	  var colors = [];
 
-  var sdg_number = $(element).attr("data-sdg"); // cogemos el dato sdg clickeado
-  let sdg_code = "sdg" + sdg_number;
+	  var sdg_number = ods_selected; // cogemos el dato sdg clickeado
+	  let sdg_code = "sdg" + sdg_number;
 
-  var jsonData = $.getJSON("data/data.geojson", sdg_code, function(data) {
-    var code = this.url.split("?")[1];
-    var ctx = document.getElementById("my-chart").getContext("2d");
+	  var jsonData = $.getJSON("data/data.geojson", sdg_code, function(data) {
+	    var code = sdg_code;
+	    //debugger;
+	    var ctx = document.getElementById("my-chart").getContext("2d");
 
-    
-    for (var i in map_data) {
-    	/* 
-    	|		en este if se produce un fallo, pero si se corrige la gráfica no muestra ningún dato,
-    	|		aún así, el código lo tendría que revisar Manolo porque no está bien planteado
-    	*/
-    	if(map_data[i].ods[code].score==null){
-    		places.set(map_data[i].name, [
-	        0,
-	        map_data[i].ods[code].color
-	      ]);
-    	}else{
-    		places.set(map_data[i].name, [
-	        Math.round(map_data[i].ods[code].score * 1000) / 1000,
-	        map_data[i].ods[code].color
-	      ]);
-    	}  
-    }
+	    
+	    for (var i in map_data) {
+	    	/* 
+	    	|		en este if se produce un fallo, pero si se corrige la gráfica no muestra ningún dato,
+	    	|		aún así, el código lo tendría que revisar Manolo porque no está bien planteado
+	    	*/
+	    	//debugger;
+	    	if(map_data[i].ods[code].score==null){
+	    		places.set(map_data[i].name, [
+		        0,
+		        map_data[i].ods[code].color
+		      ]);
+	    	}else{
+	    		places.set(map_data[i].name, [
+		        Math.round(map_data[i].ods[code].score * 1000) / 1000,
+		        map_data[i].ods[code].color
+		      ]);
+	    	}  
+	    }
 
 
-    var sorted_places = new Map(
-      [...places.entries()].sort((a, b) => b[1][0] - a[1][0])
-    );
+	    var sorted_places = new Map(
+	      [...places.entries()].sort((a, b) => b[1][0] - a[1][0])
+	    );
 
-    $.map(Array.from(sorted_places.values()), function(obj) {
-      scores.push(obj[0]);
-      //debugger;
-      colors.push( getColor(obj[1], "var-js-50"));
-    });
+	    $.map(Array.from(sorted_places.values()), function(obj) {
+	      scores.push(obj[0]);
+	      //debugger;
+	      colors.push( getColor(obj[1], "var-js-50"));
+	    });
 
-    chart.data.labels = Array.from(sorted_places.keys());
-    chart.data.datasets[0].data = scores;
-    chart.data.datasets[0].backgroundColor = colors;
+	    chart.data.labels = Array.from(sorted_places.keys());
+	    chart.data.datasets[0].data = scores;
+	    chart.data.datasets[0].backgroundColor = colors;
 
-    
-  }).then(function(){
-  	chart.update({
-      duration: 800,
-      easing: "linear"
-		});
-  	highlightCityGraph();
-  });
+	    
+	  }).then(function(){
+	  	chart.update({
+	      duration: 800,
+	      easing: "linear"
+			});
+	  	highlightCityGraph();
+	  });
 
-}else{
-		highlightCityGraph();
-		chart.update({
-      duration: 800,
-      easing: "linear"
-		});
+	}else{
+			highlightCityGraph();
+			chart.update({
+	      duration: 800,
+	      easing: "linear"
+			});
 
-}
+	}
 }
 
 function highlightCityGraph() {
@@ -506,7 +567,7 @@ function highlightCityGraph() {
 				element._model.backgroundColor = primary_color;
 				paintDataChartRanking( element._index );
 				paintDataChartScoreCity( round(my_chart.data.datasets[0].data[ element._index ]) );
-				paintDataChartAverage();
+				
 			}else{
 				element._model.backgroundColor = gray_trans;
 			}
@@ -517,7 +578,6 @@ function highlightCityGraph() {
 				element._model.backgroundColor = primary_color;
 				paintDataChartRanking( element._index );
 				paintDataChartScoreCity( round(my_chart.data.datasets[0].data[ element._index ]) );
-				paintDataChartAverage();
 			}/*else{
 
 				if( element._model.backgroundColor == primary_color ){
@@ -530,6 +590,7 @@ function highlightCityGraph() {
 
 	my_chart.clear();
 	my_chart.render();
+	paintDataChartAverage();
 	});
 }
 
