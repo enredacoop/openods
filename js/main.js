@@ -55,8 +55,10 @@ $(document).ready(function() {
 
 	includeHTML();
 
-	
+	/* Inicializamos los tooltips */
 	$('*[data-toggle="tooltip"]').tooltip();
+	/* Inicializamos los collapse */
+	$('.collapse').collapse();
 
 	// Click en botones de reset
 	$('#reset-data-map').on('click', function() {
@@ -89,7 +91,6 @@ $(document).ready(function() {
   $("#my-chart").click(function(e) {
   	showElement("#reset-data-ods");
   	if( my_chart.getElementsAtEvent(e)[0] != undefined ){
-  		//debugger
   		var name_city = my_chart.getElementsAtEvent(e)[0]._model.label;
   		var ranking_city = my_chart.getElementAtEvent(e)[0]._index;
 
@@ -117,7 +118,6 @@ $(document).ready(function() {
 	    updateRadar(my_radar, location_id);
     	clearSearchCities();
 	    
-	    //debugger;
 	    //my_chart.getElementsAtEvent(e)[0].$previousStyle.backgroundColor = primary_color;
 	    //my_chart.render();
 
@@ -155,22 +155,36 @@ $(document).ready(function() {
   	}
   });
 
+  /* Click en botón de limpiar búsqueda */
   $('#clear-seach-cities').on('click', function() {
   	clearSearchCities();
   	$("#search-cities-selected").focus();
   });
+
+  /* Click en tabs indicadores */
+  $('.wrapper-tabs button').on('click', function() {
+  	$('.wrapper-tabs button.active').removeClass("active");
+  	$(this).addClass("active");
+  	var data_tab = $(this).attr("data-tab");
+  	openTab( data_tab );
+  });
 });
 
+/* Función para abrir un tab determinado */
+function openTab( id_element ){
+	hiddenElement( $('.block-tabs ul'));
+	showElement( $("#" + id_element) );
+}
+/* Función para limpiar el campo de búsqueda de ciudades */
 function clearSearchCities() {
 	$("#search-cities-selected").val("");
 }
 
-
+/* Función para pintar los indicadores */
 function paintIndicators( location_id ){
 	if(location_id!="" || location_id!=undefined){
 		this.location_id = location_id;
 	}
-	//debugger;
 
 	if( location_id!="" && ods_selected!="" ){
 		if(ods_selected!="18"){
@@ -182,6 +196,7 @@ function paintIndicators( location_id ){
 	}
 }
 
+/* Función para pintar los indicadores de una ciudad y el ODS seleccionado */
 function paintIndicatorsODS( location_id, ods_selected){
 	showElement( $("#section-indicators") );
 	$("#section-indicators #img-sdg").attr("src", "images/sdgs/es/sdg_" + ods_selected + ".png");
@@ -205,6 +220,8 @@ function paintIndicatorsODS( location_id, ods_selected){
 		$("#section-indicators #list-indicators").append( code );
 	});
 }
+
+/* Función para redondear un valor a dos decimales */
 function round( value ){
 	return Math.round(value * 100) / 100
 }
@@ -242,7 +259,6 @@ function getColor( value, type ){
 }
 // Función para colorear todos los ODS según la ciudad seleccionada
 function colorODS( location_id ) {
-		//debugger;
 	clearBackgroundSDG();
 	this.location_id = location_id;
 	$(".block-sdgs .sdg").each(function(index, element){
@@ -519,16 +535,9 @@ function updateChart(element, chart) {
 
 	  var jsonData = $.getJSON("data/data.geojson", sdg_code, function(data) {
 	    var code = sdg_code;
-	    //debugger;
 	    var ctx = document.getElementById("my-chart").getContext("2d");
 
-	    
 	    for (var i in map_data) {
-	    	/* 
-	    	|		en este if se produce un fallo, pero si se corrige la gráfica no muestra ningún dato,
-	    	|		aún así, el código lo tendría que revisar Manolo porque no está bien planteado
-	    	*/
-	    	//debugger;
 	    	if(map_data[i].ods[code].score==null){
 	    		places.set(map_data[i].name, [
 		        0,
@@ -549,7 +558,6 @@ function updateChart(element, chart) {
 
 	    $.map(Array.from(sorted_places.values()), function(obj) {
 	      scores.push(obj[0]);
-	      //debugger;
 	      colors.push( getColor(obj[1], "var-js-50"));
 	    });
 
@@ -600,7 +608,6 @@ function highlightCityGraph() {
 			}/*else{
 
 				if( element._model.backgroundColor == primary_color ){
-					//debugger;
 					element._model.backgroundColor = element["$previousStyle"].backgroundColor;
 				}
 			}*/

@@ -2,7 +2,7 @@
 
 	Author: ENREDA
 	Author URI: https://enreda.coop
-	Version: 0.2.1
+	Version: 0.6
 
 -----------------------------------------------------------------------------------*/
 /* ----------------------------------------------------------------
@@ -13,22 +13,22 @@
 			00.01 Margins
 			00.02 Paddings
 			00.03 Backgrounds
+			00.04 Texts
 		01 Navbar
 		02 Footer
 		03 Section Map
 		04 Section Data
-		05 Section Indicators
+		05 Section Indicators / Initiatives
 		06 Section Title
 		07 Section Description
 		08 Section Text
 		09 Section Contact
 		10 Images / Icons
-
-		09 SDGs
-		10 Buttons
-		11 Badges
-		12 Charts
-		13 Tables
+		11 SDGs
+		12 Buttons
+		13 Badges
+		14 Charts
+		15 Tables
  
 ---------------------------------------------------------------- */
 /* ----------------------------------------------------------------
@@ -115,6 +115,10 @@ button {
 	opacity: 0;
 }
 
+
+
+
+
 /* ----------------------------------------------------------------
 	[ 00.01 Margins ]
 -----------------------------------------------------------------*/
@@ -144,6 +148,20 @@ button {
 .bg-primary {
 	background-color: var(--primary);
 }
+/* ----------------------------------------------------------------
+	[ 00.04 Texts ]
+-----------------------------------------------------------------*/
+.text-yellow { 
+	color: var(--bg-yellow);
+}
+.text-red { 
+	color: var(--bg-red);
+}
+.text-green { 
+	color: var(--bg-green);
+}
+
+
 
 /* ----------------------------------------------------------------
 	[ 01 Navbar ]
@@ -358,7 +376,7 @@ footer .footer-logos img {
 		}
 
 /* ----------------------------------------------------------------
-	[ 05 Section Indicators ]
+	[ 05 Section Indicators / Initiatives ]
 -----------------------------------------------------------------*/
 #section-indicators {
   border-radius: 6px;
@@ -368,18 +386,22 @@ footer .footer-logos img {
 	#section-indicators div:first-child {
 		padding-left: 0px;
     padding-right: 0px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+
 	}
 	#section-indicators .list-group {
-		margin: 30px 0px;
+		margin-bottom: 30px;
+		border: 1px solid var(--light);
 	}
 	#section-indicators .sdg {
-		opacity: 1;
+    cursor: default;
 		padding: 30px;
+		opacity: 1;
     width: 100%;
     height: 100%;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    cursor: default;
 	}
 		/*#section-indicators .sdg .wrapper {
 			position: absolute;
@@ -401,6 +423,66 @@ footer .footer-logos img {
 		padding: 5px;
 		color: var(--light);
 		cursor: default;
+	}
+
+.wrapper-tabs {
+	margin-top: 30px;
+}
+	.wrapper-tabs button {
+		border: 1px solid var(--light);
+    color: var(--gray);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 0px;
+    padding: 5px 10px;
+    background: var(--light);
+	}
+	.wrapper-tabs button:hover {
+		color: var(--default);
+	}
+	.wrapper-tabs button.active {
+		background: var(--primary);
+    color: var(--light);
+	}
+.block-tabs .btn-tab {
+	display: block;
+}
+	.block-tabs .btn-tab:hover {
+		color: var(--primary);
+	}
+
+	.block-tabs #list-initiatives .list-group-item {
+    display: block !important;
+	}
+	.block-tabs .list-group-item .wrapper-collapse {
+		width: 100%;
+	}
+	.block-tabs .list-group-item .wrapper-collapse div {
+		margin-top: 15px;
+		padding-top: 15px;
+		border-top: 1px solid var(--light);
+	}
+
+.wrapper-info {
+  float: right;
+  width: 160px;
+  vertical-align: middle;
+}
+	.wrapper-info .progress, .wrapper-info .arrow {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.wrapper-info .progress {
+		width: 130px;
+		background: var(--light);
+	}
+		.wrapper-info .progress ..progress-bar {
+			background: var(--primary);
+		}
+	.wrapper-info .arrow > i {
+		background: var(--light);
+		padding: 5px;
+		border-radius: 100%;
 	}
 
 
@@ -502,9 +584,17 @@ footer .footer-logos img {
 	font-size: 13px;
 }
 
+.fa-rotate-45 {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 
 /* ----------------------------------------------------------------
-	[ 06 SDGs ]
+	[ 11 SDGs ]
 -----------------------------------------------------------------*/
 .block-sdgs {
 	margin-top: 10px;
@@ -640,7 +730,7 @@ footer .footer-logos img {
 
 
 /* ----------------------------------------------------------------
-	[ 07 Buttons ]
+	[ 12 Buttons ]
 -----------------------------------------------------------------*/
 button.sdg, a.sdg {
 	opacity: 0.50;
@@ -661,7 +751,7 @@ button.sdg, a.sdg {
 }
 
 /* ----------------------------------------------------------------
-	[ 08 Badges ]
+	[ 13 Badges ]
 -----------------------------------------------------------------*/
 .badge-reset {
   /*margin-top: 45px;*/
@@ -678,7 +768,7 @@ button.sdg, a.sdg {
 
 
 /* ----------------------------------------------------------------
-	[ 09 Charts ]
+	[ 14 Charts ]
 -----------------------------------------------------------------*/
 #my-chart {
 	width: 100%;
@@ -714,7 +804,7 @@ button.sdg, a.sdg {
 }
 
 /* ----------------------------------------------------------------
-	[ 13 Tables ]
+	[ 15 Tables ]
 -----------------------------------------------------------------*/
 dl {
   width: 49%;
