@@ -21,6 +21,9 @@ var location_id = "";
 var city_graph = "";
 var ods_selected = "";
 
+//Variable a cambiar segun entorno
+var url_base = "/openods/" //Dev: /analiticaEnreda/opensdg/     Prod:/openods/
+
 
 /* Colores */
 var bg_score_80 =	"rgba(0, 123, 255, 1)";
@@ -50,6 +53,7 @@ var bg_red_50 = 		"#EE9AA2"; //"#DD3545";
 var bg_orange_50 = 	"#F4B89C"; //"#E9713A";
 var bg_yellow_50 = 	"#F7DE9D";//"#F2BC3C";
 var bg_green_50 = 	"#8EC29A"; //"#1D8635";
+var url = "";
 
 $(document).ready(function() {
 
@@ -119,7 +123,7 @@ $(document).ready(function() {
     	clearSearchCities();
 	    
 	    //my_chart.getElementsAtEvent(e)[0].$previousStyle.backgroundColor = primary_color;
-	    //my_chart.render();
+			//my_chart.render();
 
   	}
   });
@@ -127,32 +131,8 @@ $(document).ready(function() {
 
   // Búsqueda realizada
   $('#search-cities-selected').on('change', function() {
-  	city = $(this).val();
-  	var city_finded = false;
-
-  	$.each( $('#search-cities option'), function(key, element){
-  		if( city==element.value ){
-  			location_id = $(element).attr("data-location");
-  			city_finded = true;
-  		}
-  	});
-
-  	if( city_finded ){
-  		map.flyTo({
-				center: map_data[ location_id ].coordinates,
-				speed: 1.1,
-				curve: 0,
-				easing: function (t) { return t; }
-	    });
-
-	  	$("#title-city").html( city + " | ");
-			$("#data").html(""); // reiniciamos los datos
-
-	  	updateChart(this, my_chart);
-	  	paintIndicators(location_id);
-			colorODS( location_id );
-			updateRadar(my_radar, location_id);
-  	}
+		city = $(this).val();
+		searchCities(city);
   });
 
   /* Click en botón de limpiar búsqueda */
@@ -167,7 +147,7 @@ $(document).ready(function() {
   	$(this).addClass("active");
   	var data_tab = $(this).attr("data-tab");
   	openTab( data_tab );
-  });
+	});
 });
 
 /* Función para abrir un tab determinado */
@@ -199,7 +179,7 @@ function paintIndicators( location_id ){
 /* Función para pintar los indicadores de una ciudad y el ODS seleccionado */
 function paintIndicatorsODS( location_id, ods_selected){
 	showElement( $("#section-indicators") );
-	$("#section-indicators #img-sdg").attr("src", "images/sdgs/es/sdg_" + ods_selected + ".png");
+	$("#section-indicators #img-sdg").attr("src", url_base + "images/sdgs/es/sdg_" + ods_selected + ".png");
 
 	var ods_score = map_data[location_id].ods["sdg"+ods_selected].score;
 	if( ods_score==null){
@@ -353,6 +333,13 @@ function obtieneData() {
 		score_cities_average = round( score_cities / number_cities*1.0 );
 		paintDataChart();
 		createChart();
+
+		url = window.location.href
+		if (url.includes("#")){
+			var split = url.split("#");
+			debugger
+			searchCities(split[1]);
+		}
 	});
 }
 
@@ -494,13 +481,13 @@ function colorMapByScore() {
 }
 
 function getDataJSON() {
-  return $.getJSON("data/data.json").then(function(data) {
+  return $.getJSON(url_base + "data/data.json").then(function(data) {
     return data;
   });
 }
 
 function getDataJSONURL() {
-  $.getJSON("data/espana-municipios.geojson").then(function(data) {
+  $.getJSON(url_base +"data/espana-municipios.geojson").then(function(data) {
     return data;
   });
 }
@@ -533,7 +520,7 @@ function updateChart(element, chart) {
 	  var sdg_number = ods_selected; // cogemos el dato sdg clickeado
 	  let sdg_code = "sdg" + sdg_number;
 
-	  var jsonData = $.getJSON("data/data.geojson", sdg_code, function(data) {
+	  var jsonData = $.getJSON(url_base + "data/data.geojson", sdg_code, function(data) {
 	    var code = sdg_code;
 	    var ctx = document.getElementById("my-chart").getContext("2d");
 
@@ -618,6 +605,34 @@ function highlightCityGraph() {
 	my_chart.render();
 	paintDataChartAverage();
 	});
+}
+
+//Funcion busqueda ciudades
+function searchCities(city) {
+	var city_finded = false;
+	$.each( $('#search-cities option'), function(key, element){
+		if( city==element.value ){
+			location_id = $(element).attr("data-location");
+			city_finded = true;
+			debugger
+		}
+	});
+	if( city_finded ){
+		map.flyTo({
+			center: map_data[ location_id ].coordinates,
+			speed: 1.1,
+			curve: 0,
+			easing: function (t) { return t; }
+		});
+
+		$("#title-city").html( city + " | ");
+		$("#data").html(""); // reiniciamos los datos
+
+		updateChart(this, my_chart);
+		paintIndicators(location_id);
+		colorODS( location_id );
+		updateRadar(my_radar, location_id);
+	}
 }
 
 function updateRadar(chart, location_id) {

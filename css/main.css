@@ -313,6 +313,9 @@ footer .footer-logos img {
 	top: -75px;
 	z-index: 9;
 }
+#profile-data .section-data{
+	top: 0px;
+}
 	.section-data > .container {
 		background: #FFFFFF;
 		padding-bottom: 30px;
