@@ -1,5 +1,6 @@
 /* Variables configuración */
 var url_base = window.location.href.includes("localhost") || window.location.href.includes("127.0.0.1") ? "/opensdg/" : "/openods/";
+var version_app = "1.2";
 
 /* Variables globales */
 var my_chart;
@@ -24,14 +25,14 @@ var city_graph = "";
 var ods_selected = "";
 
 /* Colores */
-var bg_score_80 =	"rgba(0, 123, 255, 1)";
-var bg_score_70 =	"#3395FF";
-var bg_score_60 =	"#4CA2FF";
-var bg_score_50 =	"#65AFFF";
-var bg_score_40 =	"#7FBCFF";
-var bg_score_30 =	"#99CAFF";
-var bg_none = "#595959";
-var bg_none_50 = "#ACACAC"; //"#595959";
+var bg_score_80 = "#50134e";
+var bg_score_70 = "#5a9be8";
+var bg_score_60 = "#68a1e4";
+var bg_score_50 = "#80ade2";
+var bg_score_40 = "#9fc1e8";
+var bg_score_30 = "#b5cbe4";
+var bg_none 		= "#595959";
+var bg_none_50  = "#ACACAC"; //"#595959";
 
 var default_color = "#5A5A5A";
 var light 	= "#ECECEC";
@@ -39,8 +40,8 @@ var gray 		= "#7B7B7B";
 var default_color_trans = "rgba(123,123,123,.66)";
 var light_trans 	= "rgba(236,236,236,0.33)";
 var gray_trans 		= "rgba(48,48,48,0.13)";
-var primary_color = "rgba(0, 123, 255, 1)";
-var primary_color_50 = "rgba(0, 123, 255, .50)";
+var primary_color = "#4A8FE2";
+var primary_color_50 = "rgba(74,143,226,.5)";
 
 var bg_red = 		"#DD3545";
 var bg_orange = "#E9713A";
@@ -925,6 +926,7 @@ function includeHTML() {
 	| meterla en la función inicial.
 	*/
   addBaseURL();
+  changeVersion();
 }
 
 /* Función para añadir a los enlaces el url_base */
@@ -946,4 +948,8 @@ function addBaseURL() {
 			elmnt.removeAttribute("data_conf");
 		}
 	}
+}
+
+function changeVersion() {
+	$("#version").text( version_app );
 }

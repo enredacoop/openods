@@ -39,8 +39,8 @@
 	--light: 		#ECECEC;
 	--gray: 		#7B7B7B;
 
-	--primary: 		#007bff;
-	--primary-50:	rgba(0,123,255,.5);
+	--primary: 		#4A8FE2;
+	--primary-50:	rgba(74,143,226,.5);
 
 	--default-trans:  rgba(123,123,123,.66);
 	--light-trans:  	rgba(236,236,236,0.33);
@@ -71,12 +71,12 @@
 	--bg-green: 	#1D8635;
 	--bg-none: 		#595959;
 
-	--bg-score-80:	rgb(0, 123, 255, 1);
-	--bg-score-70:	#3395FF;
-	--bg-score-60:	#4CA2FF;
-	--bg-score-50:	#65AFFF;
-	--bg-score-40:	#7FBCFF;
-	--bg-score-30:	#99CAFF;
+--bg-score-80: #4A8FE2;
+--bg-score-70: #5a9be8;
+--bg-score-60: #68a1e4;
+--bg-score-50: #80ade2;
+--bg-score-40: #9fc1e8;
+--bg-score-30: #b5cbe4;
 
 	--shadow-primary: 0px -3px 6px rgba(0,0,0,.13);
 	--shadow-panel: 0px 1px 6px rgba(0,0,0,.13);
@@ -95,7 +95,7 @@ body {
 	overflow-x: hidden;
 }
 main {
-	margin-bottom: 60px;
+	/*margin-bottom: 60px;*/
 }
 h1 {
   text-align: center;
@@ -113,6 +113,10 @@ button {
 .hidden {
 	display: none;
 	opacity: 0;
+}
+
+a {
+	color: var(--primary);
 }
 
 
@@ -146,7 +150,7 @@ button {
 	background-color: #FFFFFF !important;
 }
 .bg-primary {
-	background-color: var(--primary);
+	background-color: var(--primary) !important;
 }
 /* ----------------------------------------------------------------
 	[ 00.04 Texts ]
@@ -166,6 +170,22 @@ button {
 /* ----------------------------------------------------------------
 	[ 01 Navbar ]
 -----------------------------------------------------------------*/
+.navbar .nav-link.nav-hihglight {
+  background: var(--primary);
+  border-radius: 3px;
+  color: var(--light);
+  box-shadow: var(--shadow-panel);
+}
+	.navbar .nav-link.nav-hihglight:hover {
+		color: var(--white);
+	}
+.navbar-right {
+  margin-left: auto;
+}
+.navbar .navbar-brand img {
+	height: 100%;
+  max-height: 25px;
+}
 
 
 /* ----------------------------------------------------------------
@@ -399,7 +419,7 @@ footer .footer-logos img {
 	}
 	#section-indicators .list-group {
 		margin-bottom: 30px;
-		border: 1px solid var(--light);
+		/*border: 1px solid var(--light);*/
 	}
 	#section-indicators .sdg {
     cursor: default;
