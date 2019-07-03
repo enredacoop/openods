@@ -198,6 +198,10 @@ footer .footer-logos img {
 .section-map > .row {
 	margin: 0px;
 }
+#section-map.row {
+	margin: 10px;
+}
+	#section-map.row .col-12,
 	.section-map > .row .col-12 {
 		padding: 0px;
 	}

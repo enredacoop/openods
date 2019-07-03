@@ -1,3 +1,6 @@
+/* Variables configuración */
+var url_base = window.location.href.includes("localhost") || window.location.href.includes("127.0.0.1") ? "/opensdg/" : "/openods/";
+
 /* Variables globales */
 var my_chart;
 var my_radar;
@@ -15,15 +18,10 @@ var score_cities = 0;
 var score_cities_average = 0;
 var number_cities = 0;
 
-
 var map_data = new Object();
 var location_id = "";
 var city_graph = "";
 var ods_selected = "";
-
-//Variable a cambiar segun entorno
-var url_base = "/openods/" //Dev: /analiticaEnreda/opensdg/     Prod:/openods/
-
 
 /* Colores */
 var bg_score_80 =	"rgba(0, 123, 255, 1)";
@@ -129,7 +127,7 @@ $(document).ready(function() {
   });
 
 
-  // Búsqueda realizada
+  /* Búsqueda realizada */
   $('#search-cities-selected').on('change', function() {
 		city = $(this).val();
 		searchCities(city);
@@ -334,10 +332,10 @@ function obtieneData() {
 		paintDataChart();
 		createChart();
 
+		/* Comprobamos URL */
 		url = window.location.href
 		if (url.includes("#")){
 			var split = url.split("#");
-			debugger
 			searchCities(split[1]);
 		}
 	});
@@ -614,7 +612,6 @@ function searchCities(city) {
 		if( city==element.value ){
 			location_id = $(element).attr("data-location");
 			city_finded = true;
-			debugger
 		}
 	});
 	if( city_finded ){
@@ -894,7 +891,7 @@ function getNameIndicator( value ){
 
 
 
-
+/* Función para poder incluir fragmentos en páginas */
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/
@@ -921,4 +918,32 @@ function includeHTML() {
       return;
     }
   }
+
+  /* 
+  |	Aunque deberíamos ejecutar la función cuando el documento está listo,
+	|	la lanzamos aquí para aplicarlo en los includes. Si detectamos algún fallo o retardo
+	| meterla en la función inicial.
+	*/
+  addBaseURL();
+}
+
+/* Función para añadir a los enlaces el url_base */
+function addBaseURL() {
+	var z, i, elmnt;
+	z = document.getElementsByTagName('*');
+	for( i=0; i<z.length; i++) {
+		elmnt = z[i];
+		data_conf = elmnt.getAttribute("data_conf");
+
+		if( data_conf=="base_url" ) {
+
+			if(elmnt.href){
+				elmnt.href = url_base + $(elmnt).attr("href");
+			}else{
+				var new_src = url_base + $(elmnt).attr("src");
+				$(elmnt).attr("src", new_src);
+			}
+			elmnt.removeAttribute("data_conf");
+		}
+	}
 }

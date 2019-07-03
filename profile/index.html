@@ -55,9 +55,7 @@
     <!-- Custom Javascripts -->
     <script src="../js/main.js"></script>
   </head>
-  <body id = "profile-data" class="d-flex flex-column h-100" ondragstart="return false">
-    <!-- Navbar -->
-    <div w3-include-html="../include/in_navbar.html"></div>
+  <body id="profile-data" class="d-flex flex-column h-100" ondragstart="return false">
 
     <main role="main" class="flex-shrink-0">
       <section class="section-data">
@@ -337,6 +335,7 @@
             </div>
           </div>
 
+          <!-- Indicators -->
           <div id="section-indicators" class="row hidden">
             <div class="col-2">
               <button class="sdg sdg_01">
@@ -516,95 +515,96 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="section-map">
-        <div class="row">
-          <div class="col-12">
-            <div id="search"></div>
-            <div id="mapbox-map" class="map"></div>
+          <!-- Map -->
+          <div id="section-map" class="row">
+            <div class="col-12">
+              <div id="search"></div>
+              <div id="mapbox-map" class="map"></div>
 
-            <div class="loader loader--style1" title="0" id="loader">
-              <svg
-                version="1.1"
-                id="loader-1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                x="0px"
-                y="0px"
-                width="40px"
-                height="40px"
-                viewBox="0 0 40 40"
-                enable-background="new 0 0 40 40"
-                xml:space="preserve"
-              >
-                <path
-                  opacity="0.2"
-                  fill="#000"
-                  d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
-			    s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
-			    c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
+              <div class="loader loader--style1" title="0" id="loader">
+                <svg
+                  version="1.1"
+                  id="loader-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  width="40px"
+                  height="40px"
+                  viewBox="0 0 40 40"
+                  enable-background="new 0 0 40 40"
+                  xml:space="preserve"
                 >
                   <path
+                    opacity="0.2"
                     fill="#000"
-                    d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
-				    C22.32,8.481,24.301,9.057,26.013,10.047z"
+                    d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+            s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+            c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
                   >
-                    <animateTransform
-                      attributeType="xml"
-                      attributeName="transform"
-                      type="rotate"
-                      from="0 20 20"
-                      to="360 20 20"
-                      dur="0.5s"
-                      repeatCount="indefinite"
-                    ></animateTransform>
+                    <path
+                      fill="#000"
+                      d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+              C22.32,8.481,24.301,9.057,26.013,10.047z"
+                    >
+                      <animateTransform
+                        attributeType="xml"
+                        attributeName="transform"
+                        type="rotate"
+                        from="0 20 20"
+                        to="360 20 20"
+                        dur="0.5s"
+                        repeatCount="indefinite"
+                      ></animateTransform>
+                    </path>
                   </path>
-                </path>
-              </svg>
+                </svg>
 
-              <span>Cargando datos...</span>
-            </div>
+                <span>Cargando datos...</span>
+              </div>
 
-            <div class="legend-global over-map top-left">
-              <h4>Puntuación global</h4>
-              <div><span class="bg-score-80"></span><span>> 80</span></div>
-              <div><span class="bg-score-70"></span><span>70 - 80</span></div>
-              <div><span class="bg-score-60"></span><span>60 - 70</span></div>
-              <div><span class="bg-score-50"></span><span>50 - 60</span></div>
-              <div><span class="bg-score-40"></span><span>40 - 50</span></div>
-              <div><span class="bg-score-30"></span><span>< 50</span></div>
-              <div>
-                <span class="bg-score-none"></span
-                ><span>Información no disponible</span>
+              <div class="legend-global over-map top-left">
+                <h4>Puntuación global</h4>
+                <div><span class="bg-score-80"></span><span>> 80</span></div>
+                <div><span class="bg-score-70"></span><span>70 - 80</span></div>
+                <div><span class="bg-score-60"></span><span>60 - 70</span></div>
+                <div><span class="bg-score-50"></span><span>50 - 60</span></div>
+                <div><span class="bg-score-40"></span><span>40 - 50</span></div>
+                <div><span class="bg-score-30"></span><span>< 50</span></div>
+                <div>
+                  <span class="bg-score-none"></span
+                  ><span>Información no disponible</span>
+                </div>
+              </div>
+
+              <div class="legend-global over-map top-right">
+                <h4>
+                  Filtro
+                  <i
+                    class="far fa-question-circle icon-help"
+                    data-toggle="tooltip"
+                    data-placement="right"
+                    data-html="true"
+                    title="Realiza filtros rápidos. Estos filtros mostrarán en el mapa el tipo de entidad seleccionada. <b>Funcionalidad no disponible.</b>"
+                  ></i>
+                </h4>
+                <div><a href="#">Ayuntamientos</a></div>
+                <div><a href="#">Diputaciones</a></div>
+                <div><a href="#">Comunidades Autónomas</a></div>
+                <div><a href="#">Universidades</a></div>
+                <div><a href="#">Empresas</a></div>
               </div>
             </div>
-
-            <div class="legend-global over-map top-right">
-              <h4>
-                Filtro
-                <i
-                  class="far fa-question-circle icon-help"
-                  data-toggle="tooltip"
-                  data-placement="right"
-                  data-html="true"
-                  title="Realiza filtros rápidos. Estos filtros mostrarán en el mapa el tipo de entidad seleccionada. <b>Funcionalidad no disponible.</b>"
-                ></i>
-              </h4>
-              <div><a href="#">Ayuntamientos</a></div>
-              <div><a href="#">Diputaciones</a></div>
-              <div><a href="#">Comunidades Autónomas</a></div>
-              <div><a href="#">Universidades</a></div>
-              <div><a href="#">Empresas</a></div>
-            </div>
           </div>
+
         </div>
       </section>
+
     </main>
 
     <!-- Footer -->
-    <div w3-include-html="include/in_footer.html"></div>
+    <div w3-include-html="../include/in_footer.html"></div>
   </body>
 
   <script>
