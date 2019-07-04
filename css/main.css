@@ -38,6 +38,7 @@
 	--default: 	#5A5A5A;
 	--light: 		#ECECEC;
 	--gray: 		#7B7B7B;
+	--dark:			#333333;
 
 	--primary: 		#4681CB;
 	--primary-50:	rgba(70,129,203,.5);
@@ -222,6 +223,10 @@ footer .footer-logos img {
 	footer .footer-logos img:hover {
 	  filter: grayscale(0%);
 	}
+footer.footer-dark {
+	background: var(--dark);
+	color: var(--light);
+}
 
 /* ----------------------------------------------------------------
 	[ 03 Section Map ]
@@ -545,11 +550,16 @@ footer .footer-logos img {
 #section-description {
 	color: var(--light);
 	padding: 60px 0px; 
-	background: var(--primary-50);
+	background: var(--primary);
 	font-size: 17px;
+	border-top: 1px solid var(--light);
 }
 	#section-description a {
-		color: var(--primary);
+		color: var(--dark);
+	}
+	#section-description p {
+		font-size: 22px;
+		text-align: justify;
 	}
 
 
@@ -558,8 +568,9 @@ footer .footer-logos img {
 -----------------------------------------------------------------*/
 #section-text {
 	padding: 120px 0px;
-	font-size: 17px;
+	font-size: 20px;
 	color: var(--gray);
+	text-align: justify;
 }
 #section-text:nth-child(even) {
 	background: #FFFFFF;
@@ -787,6 +798,13 @@ button.sdg, a.sdg {
   border-radius: 100%;
   z-index: 999;
 }
+.btn-primary {
+	background: var(--primary) !important;
+	border: var(--primary);
+}
+	.btn-primary:hover {
+		box-shadow: var(--shadow-panel);
+	}
 
 /* ----------------------------------------------------------------
 	[ 13 Badges ]
