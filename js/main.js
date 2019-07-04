@@ -1,6 +1,6 @@
 /* Variables configuración */
 var url_base = window.location.href.includes("localhost") || window.location.href.includes("127.0.0.1") ? "/opensdg/" : "/";
-var version_app = "0.1.4";
+var version_app = "0.1.5";
 
 /* Variables globales */
 var my_chart;
@@ -683,7 +683,6 @@ function updateCityGraph( name_city, ranking_city ) {
 
 //Funcion actualizacion URL
 function updateURL(municipio){
-	debugger
 	window.history.pushState("","","#"+municipio);
 }
 /* Función para restaurar el gráfico de barras y el gráfico de radar */
