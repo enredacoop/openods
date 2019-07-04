@@ -1,6 +1,6 @@
 /* Variables configuración */
-var url_base = window.location.href.includes("localhost") || window.location.href.includes("127.0.0.1") ? "/opensdg/" : "/openods/";
-var version_app = "1.2";
+var url_base = window.location.href.includes("localhost") || window.location.href.includes("127.0.0.1") ? "/opensdg/" : "/";
+var version_app = "0.1.3";
 
 /* Variables globales */
 var my_chart;
@@ -25,12 +25,12 @@ var city_graph = "";
 var ods_selected = "";
 
 /* Colores */
-var bg_score_80 = "#50134e";
-var bg_score_70 = "#5a9be8";
-var bg_score_60 = "#68a1e4";
-var bg_score_50 = "#80ade2";
-var bg_score_40 = "#9fc1e8";
-var bg_score_30 = "#b5cbe4";
+var bg_score_80 = "#4681CB";
+var bg_score_70 = "#6395d3";
+var bg_score_60 = "#6798d3";
+var bg_score_50 = "#6e9bd3";
+var bg_score_40 = "#86aad6";
+var bg_score_30 = "#a8c1e0";
 var bg_none 		= "#595959";
 var bg_none_50  = "#ACACAC"; //"#595959";
 
@@ -40,8 +40,8 @@ var gray 		= "#7B7B7B";
 var default_color_trans = "rgba(123,123,123,.66)";
 var light_trans 	= "rgba(236,236,236,0.33)";
 var gray_trans 		= "rgba(48,48,48,0.13)";
-var primary_color = "#4A8FE2";
-var primary_color_50 = "rgba(74,143,226,.5)";
+var primary_color = "#4681CB";
+var primary_color_50 = "rgba(70,129,203,.5)";
 
 var bg_red = 		"#DD3545";
 var bg_orange = "#E9713A";
@@ -127,6 +127,19 @@ $(document).ready(function() {
   	}
   });
 
+	$(window).bind('hashchange', function() {
+		url = window.location.href
+		if (url.includes("#")){
+			var split = url.split("#");
+			var url_start = split[0].slice(0,-1);
+			$.each( $('#search-cities option'), function(key, element){
+				if( decodeURI(split[1]).toLowerCase()==element.value.toLowerCase()){
+					//window.location.href = "http://localhost/analiticaEnreda/opensdg/profile#"+decodeURI(split[1]);
+					window.location.href = url_start +"#"+decodeURI(split[1]);
+				}
+			});
+		}
+	});
 
   /* Búsqueda realizada */
   $('#search-cities-selected').on('change', function() {
@@ -337,7 +350,7 @@ function obtieneData() {
 		url = window.location.href
 		if (url.includes("#")){
 			var split = url.split("#");
-			searchCities(split[1]);
+			searchCities(decodeURI(split[1]));
 		}
 	});
 }
@@ -371,7 +384,7 @@ function paintDataChartAverage() {
 	$('#infochart-state').html( score_national );
 }
 function paintDataChartRanking( value ){
-	$('#infochart-ranking').html( value );
+	$('#infochart-ranking').html( value + 1 );
 	$('#infochart-ranking').parent().removeClass("hidden");
 }
 function paintDataChartScoreCity( value ){
@@ -610,9 +623,10 @@ function highlightCityGraph() {
 function searchCities(city) {
 	var city_finded = false;
 	$.each( $('#search-cities option'), function(key, element){
-		if( city==element.value ){
+		if( city.toLowerCase()==element.value.toLowerCase()){
 			location_id = $(element).attr("data-location");
 			city_finded = true;
+			city = element.value;
 		}
 	});
 	if( city_finded ){
@@ -652,8 +666,10 @@ function updateRadar(chart, location_id) {
     easing: "linear"
   });
 
-  highlightCityGraph();
-
+	highlightCityGraph();
+	if(window.location.href.includes("profile")){
+		updateURL(municipio);
+	}
 }
 
 /* Función para actualizar la variable global city_graph que contiene el nombre de la ciudad seleccionada en la gráfica */
@@ -665,6 +681,11 @@ function updateCityGraph( name_city, ranking_city ) {
 	}
 }
 
+//Funcion actualizacion URL
+function updateURL(municipio){
+	debugger
+	window.history.pushState("","","#"+municipio);
+}
 /* Función para restaurar el gráfico de barras y el gráfico de radar */
 function resetChart(chart) {
   createChart();

@@ -39,8 +39,8 @@
 	--light: 		#ECECEC;
 	--gray: 		#7B7B7B;
 
-	--primary: 		#4A8FE2;
-	--primary-50:	rgba(74,143,226,.5);
+	--primary: 		#4681CB;
+	--primary-50:	rgba(70,129,203,.5);
 
 	--default-trans:  rgba(123,123,123,.66);
 	--light-trans:  	rgba(236,236,236,0.33);
@@ -71,12 +71,12 @@
 	--bg-green: 	#1D8635;
 	--bg-none: 		#595959;
 
---bg-score-80: #4A8FE2;
---bg-score-70: #5a9be8;
---bg-score-60: #68a1e4;
---bg-score-50: #80ade2;
---bg-score-40: #9fc1e8;
---bg-score-30: #b5cbe4;
+	--bg-score-80: #4681CB;
+	--bg-score-70: #6395d3;
+	--bg-score-60: #6798d3;
+	--bg-score-50: #6e9bd3;
+	--bg-score-40: #86aad6;
+	--bg-score-30: #a8c1e0;
 
 	--shadow-primary: 0px -3px 6px rgba(0,0,0,.13);
 	--shadow-panel: 0px 1px 6px rgba(0,0,0,.13);
@@ -84,7 +84,7 @@
 
 html, body {
   height: 100% !important;
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 body {
   display: -ms-flexbox!important;
@@ -186,6 +186,17 @@ a {
 	height: 100%;
   max-height: 25px;
 }
+.navbar .nav-item {
+	margin-left: 15px;
+	font-size: 16px;
+}
+	.navbar .nav-item:hover {
+		background: var(--primary-50);
+  	border-radius: 3px;
+	}
+		.navbar .nav-item:hover .nav-link {
+			  	color: var(--light);
+		}
 
 
 /* ----------------------------------------------------------------
@@ -565,7 +576,7 @@ footer .footer-logos img {
 	#section-text .wrapper-img img {
 	  height: 100%;
 	  max-height: 470px;
-	  box-shadow: 0 4px 16px 0 rgba(0,0,0,.13);
+	  /*box-shadow: 0 4px 16px 0 rgba(0,0,0,.13);*/
 	}
 	#section-text .wrapper-img img.img-left {
 		margin-right: 100px;
