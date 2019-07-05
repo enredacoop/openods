@@ -119,6 +119,10 @@ button {
 a {
 	color: var(--primary);
 }
+	a:hover {
+		text-decoration: none;
+		color: var(--primary-50);
+	}
 
 
 
@@ -593,11 +597,17 @@ footer.footer-dark {
 		margin-right: 100px;
     position: absolute;
     right: 0px;
+    transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
 	}
 	#section-text .wrapper-img img.img-right {
 		margin-left: 100px;
     position: absolute;
     left: 0px;
+    transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
 	}
 
 
@@ -605,7 +615,7 @@ footer.footer-dark {
 	[ 09 Section Contact ]
 -----------------------------------------------------------------*/
 #section-contact {
-	background: var(--primary-50);
+	background: var(--gray);
 	padding: 30px 0px;
 }
 	#section-contact h2 {
@@ -798,12 +808,24 @@ button.sdg, a.sdg {
   border-radius: 100%;
   z-index: 999;
 }
+	.button-top:hover {
+		color: var(--primary);
+	}
+
 .btn-primary {
 	background: var(--primary) !important;
 	border: var(--primary);
 }
-	.btn-primary:hover {
+	.btn-primary:hover, .btn-light:hover {
 		box-shadow: var(--shadow-panel);
+	}
+.btn-light {
+	background: var(--light) !important;
+	border: var(--light);
+	color: var(--dark);
+}
+	.btn-light:hover {
+		color: var(--primary);
 	}
 
 /* ----------------------------------------------------------------

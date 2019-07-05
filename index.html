@@ -59,7 +59,7 @@
 			        <span>Cargando datos...</span>
 			    	</div>
 
-			    	<div class="legend-global over-map top-left">
+			    	<div id="legend-global"  class="legend-global over-map top-left">
 							<h4>Puntuación global</h4>
 							<div><span class="bg-score-80"></span><span>> 80</span></div>
 							<div><span class="bg-score-70"></span><span>70 - 80</span></div>
@@ -68,6 +68,18 @@
 							<div><span class="bg-score-40"></span><span>40 - 50</span></div>
 							<div><span class="bg-score-30"></span><span>< 50</span></div>
 							<div><span class="bg-score-none"></span><span>Información no disponible</span></div>
+						</div>
+
+						<div id="legend-ods" class="legend-global over-map top-left hidden">
+							<h4>Puntuación ODS</h4>
+							<div><span class="bg-green"></span><span>Objetivo mejorado satisfactoriamente</span></div>
+								<div><span class="bg-yellow"></span><span>Objetivo poco mejorado</span></div>
+								<div><span class="bg-orange"></span><span>Objetivo poco empeorado</span></div>
+								<div><span class="bg-red"></span><span>Objetivo muy empeorado</span></div>
+								<div><span class="bg-none"></span><span>
+									Información no disponible 
+									<i class="far fa-question-circle" data-toggle="tooltip" data-placement="right" title="El año anterior no había ninguna puntuación para el objetivo."></i>
+								</span></div>
 						</div>
 
 						<div class="legend-global over-map top-right">

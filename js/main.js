@@ -1,6 +1,6 @@
 /* Variables configuración */
 var url_base = window.location.href.includes("localhost") || window.location.href.includes("127.0.0.1") ? "/opensdg/" : "/";
-var version_app = "0.1.5";
+var version_app = "0.1.6";
 
 /* Variables globales */
 var my_chart;
@@ -310,6 +310,7 @@ function resetMap() {
 	$("#data").html(""); // reiniciamos los datos
 	$("#infochart-ranking").html("");
 	paintDataChartAverage();
+	updateLegend("global");
 
 	hiddenElement( $("#infochart-ranking").parent() );
 	hiddenElement( $("#infochart-score").parent() );
@@ -405,6 +406,9 @@ function changeSDG(element) {
 	var_filter = "";
 	if( ods_selected!="18"){
 		var_filter = "sdg" + ods_selected  +  "_color";
+		// mostrar leyenda ODS
+		updateLegend("ods");
+
 		// cambiar color municipios por color ODS
 		map.setPaintProperty(
 			'ods-cities-shapes',
@@ -419,12 +423,34 @@ function changeSDG(element) {
 				]
 		)
 	}else{
+		updateLegend("global");
 		desactiveSDG();
 		colorMapByScore();
 		hiddenElement("#reset-data-ods");
 	}
 }
 
+/* Función para actualizar la leyenda que se muestra sobre el mapa */
+function updateLegend( legend_active ){
+	var elmnt_to_active, elmnt_to_desactive;
+
+	switch( legend_active ){
+		case "ods": 
+			elmnt_to_active = $('#legend-ods');
+			elmnt_to_desactive = $('#legend-global');
+			break;
+		case "global":
+			elmnt_to_active = $('#legend-global');
+			elmnt_to_desactive = $('#legend-ods');
+			break;
+
+	}
+
+	showElement( elmnt_to_active)
+	hiddenElement( elmnt_to_desactive );
+}
+
+/* Función para cambiar el título según el ODS seleccionado */
 function changeTitle( data_sdg ) {
 	let titulo = "";
 		switch( data_sdg ){
@@ -450,13 +476,16 @@ function changeTitle( data_sdg ) {
 		$("#title").text( titulo );
 }
 
+/* Función para activar el ODS seleccionado */
 function activeSDG( element ){
 	desactiveSDG();
 	$(element).addClass("sdg_hover"); 
 }
+/* Función para desactivar el ODS que estaba seleccionado */
 function desactiveSDG(){
 	$(".block-sdgs .sdg.sdg_hover").removeClass("sdg_hover");
 }
+/* Función para quitar el color del ODS */
 function clearBackgroundSDG( element ){
 	if(element){
 		$( element ).removeClass("bg-orange");
@@ -473,8 +502,8 @@ function clearBackgroundSDG( element ){
 	}
 }
 
+/* Función para colorear los municipos por score ODS */
 function colorMapByScore() {
-	// cambiar color municipios por score ODS
 		map.setPaintProperty(
 		'ods-cities-shapes',
 		'circle-color', [ // color de relleno según valores
@@ -492,18 +521,24 @@ function colorMapByScore() {
 	);
 }
 
+/* Función para obtener los datos del JSON local */
 function getDataJSON() {
   return $.getJSON(url_base + "data/data.json").then(function(data) {
     return data;
   });
 }
 
+/* 
+|		NO SE UTILIZA
+|		Función para obtener los datos del JSON local
+*/
 function getDataJSONURL() {
   $.getJSON(url_base +"data/espana-municipios.geojson").then(function(data) {
     return data;
   });
 }
 
+/* Función para obtener ciudad de la data al buscar */
 function findItemsJSON(data_items, id_search) {
   let res = null;
   $.map(data_items, function(obj) {
@@ -515,6 +550,7 @@ function findItemsJSON(data_items, id_search) {
   return res;
 }
 
+/* Función para obtener indicadores por ODS */
 function findItemsBySDG(data_items, id_search) {
   let res = new Array();
   $.map(data_items, function(obj) {
