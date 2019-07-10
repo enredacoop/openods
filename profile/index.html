@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link href="../css/main.css?v0.1.11" rel="stylesheet">
+    <link href="../css/main.css?v0.2.0" rel="stylesheet">
 
     <!-- Mapbox Library -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
@@ -28,7 +28,7 @@
     <script src="../js/Chart.js"></script>
 
     <!-- Custom Javascripts -->
-    <script src="../js/main.js?v0.1.11"></script>
+    <script src="../js/main.js?v0.2.0"></script>
   </head>
   <body id="profile-data" class="d-flex flex-column h-100" ondragstart="return false">
 
@@ -52,7 +52,7 @@
                     </h2>
                   </div>
                 </div>
-                <div class="col-6">
+                <div class="col-sm-12 col-md-6">
                   <a
                     id="reset-data-ods"
                     href="#"
@@ -61,7 +61,7 @@
                   >
                   <!--a id="reset-data-map" href="#" class="badge badge-primary badge-reset">Volver al listado</a-->
                 </div>
-                <div class="col-6 text-right">
+                <div class="col-sm-12 col-md-6 text-right">
                   <div class="block-search">
                     <input
                       id="search-cities-selected"
@@ -80,7 +80,7 @@
 
           <!-- Gráficas -->
           <div class="row justify-content-center ptb-30">
-            <div class="col-6">
+            <div class="col-sm-12 col-md-6">
               <div class="wrapper-infochart">
                 <div class="block-infochart">
                   <h5>
@@ -134,13 +134,13 @@
               </div>
               <canvas id="my-chart"></canvas>
             </div>
-            <div class="col-6">
+            <div class="col-sm-12 col-md-6">
               <canvas id="my-chart-comparative"></canvas>
             </div>
           </div>
 
           <div class="row justify-content-around">
-            <div class="col-4 m-10">
+            <div class="col-sm-6 col-md-4 m-10">
               <div class="legend-global">
                 <h4>
                   Puntuación
@@ -181,7 +181,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-4 m-10">
+            <div class="col-sm-6 col-md-4 m-10">
               <div class="legend-global">
                 <h4>
                   Comparativa
@@ -315,7 +315,7 @@
 
           <!-- Indicators -->
           <div id="section-indicators" class="row hidden">
-            <div class="col-2">
+            <div class="col-sm-12 col-md-2">
               <button class="sdg sdg_01">
                 <img id="img-sdg" src="../images/sdgs/es/sdg_01.png" />
                 <div>
@@ -324,7 +324,7 @@
                 </div>
               </button>
             </div>
-            <div class="col-10">
+            <div class="col-sm-12 col-md-10">
               <div class="wrapper-tabs">
                 <button data-tab="list-indicators" class="active">
                   Indicadores

@@ -220,7 +220,10 @@ footer {
   color: var(--gray);
 }
 footer .footer-logos {
-	/*text-align: right;*/
+	width: 100%;
+}
+footer .footer-links {
+	text-align: right;
 }
 footer .footer-logos img {
 	width: 100px;
@@ -235,6 +238,18 @@ footer .footer-logos img {
 footer.footer-dark {
 	background: var(--dark);
 	color: var(--light);
+}
+@media only screen and (max-width: 767px) {
+	footer .footer-logos {
+		text-align: center;
+	}
+	footer .footer-logos a {
+		display: inline-block;
+	}
+	footer .footer-links {
+		text-align: left;
+		margin-top: 30px;
+	}
 }
 
 /* ----------------------------------------------------------------
@@ -614,7 +629,16 @@ footer.footer-dark {
     -webkit-transform: rotate(3deg);
     -moz-transform: rotate(3deg);
 	}
-
+@media only screen and (max-width: 767px) {
+	#section-text .wrapper-img img.img-right {
+		margin-left: 0px;
+		margin-top: 30px;
+	}
+	#section-text .wrapper-img img.img-left {
+		margin-right: 0px;
+		margin-top: 30px;
+	}
+}
 
 /* ----------------------------------------------------------------
 	[ 09 Section Contact ]
@@ -675,6 +699,11 @@ footer.footer-dark {
     width: 14.333%;
     margin-bottom: 10px;
     margin-right: 10px;
+	}
+	@media only screen and (max-width: 767px) {
+		.block-sdgs ul > li {
+			width: 20.333%
+		}
 	}
 	.block-sdgs .sdg img {
 		width: 100%;
