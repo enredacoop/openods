@@ -1,6 +1,6 @@
 /* Variables configuración */
 var url_base = window.location.href.includes("localhost") || window.location.href.includes("127.0.0.1") ? "/opensdg/" : "/";
-var version_app = "0.1.8";
+var version_app = "0.1.9";
 
 /* Variables globales */
 var my_chart;
