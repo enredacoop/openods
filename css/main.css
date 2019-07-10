@@ -39,6 +39,7 @@
 	--light: 		#ECECEC;
 	--gray: 		#7B7B7B;
 	--dark:			#333333;
+	--help:			#c1c1c1;
 
 	--primary: 		#4681CB;
 	--primary-50:	rgba(70,129,203,.5);
@@ -202,6 +203,10 @@ a {
 		.navbar .nav-item:hover .nav-link {
 			  	color: var(--light);
 		}
+.navbar .version {
+	font-style: italic;
+	color: var(--help);
+}
 
 
 /* ----------------------------------------------------------------
