@@ -204,8 +204,9 @@ a {
 			  	color: var(--light);
 		}
 .navbar .version {
-	font-style: italic;
-	color: var(--help);
+	color: #e9ecef;
+    font-size: medium;
+    font-weight: 700;
 }
 
 
@@ -934,4 +935,8 @@ dl.first, dd.first {
 dl, dd {
   padding-top: 10px; 
   border-top: 1px solid var(--light);
+}
+
+header {
+	background-color: #1d4082;
 }

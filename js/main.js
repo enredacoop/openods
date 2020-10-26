@@ -1,5 +1,6 @@
 /* Variables configuración */
-var url_base = window.location.href.includes("localhost") || window.location.href.includes("127.0.0.1") ? "/opensdg/" : "/openods/";
+//var url_base = window.location.href.includes("localhost") || window.location.href.includes("127.0.0.1") ? "/opensdg/" : "/openods/";
+var url_base = window.location.href.includes("localhost") || window.location.href.includes("127.0.0.1") ? "/" : "/";
 var version_app = "0.3.0";
 
 /* Variables globales */
